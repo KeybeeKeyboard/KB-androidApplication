@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1064716517603",
+    "firebase_url": "https://keybee-55e23.firebaseio.com",
+    "project_id": "keybee-55e23"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1064716517603:android:89e83fa2e2346297",
+        "android_client_info": {
+          "package_name": "it.keybeeproject.keybee"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1064716517603-1qhc2dsqg4lf3l0c9mlrj0fkiclpju6p.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "1064716517603-enrqdua0pm8f2j3r7caooquo60r2c1de.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfQ_If9j44CVx40Y7KhbbMPuNVZWf_22o"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-83714106-1"
+          }
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,278 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- English -->
+    <string name="app_name">Keybee Keyboard</string>
+
+    <!-- Custom fonts -->
+    <string name="font_dosis_regular">fonts/Dosis-Regular.ttf</string>
+    <string name="font_dosis_medium">fonts/Dosis-Medium.ttf</string>
+    <string name="font_dosis_semi_bold">fonts/Dosis-SemiBold.ttf</string>
+    <string name="font_dosis_bold">fonts/Dosis-Bold.ttf</string>
+    <string name="font_roboto_regular">fonts/Roboto-Regular.ttf</string>
+    <string name="font_roboto_light">fonts/Roboto-Light.ttf</string>
+    <string name="font_dosis_light">fonts/Dosis-Light.ttf</string>
+    <!-- Custom fonts -->
+
+    <string name="keyboard_settings">Keybee Keyboard settings</string>
+    <string name="label_subtype_generic">%s</string>
+    <string name="general">General</string>
+    <string name="enable_keybee">Enable Keybee Keyboard</string>
+    <string name="activate_select_keybee">Activate and select Keybee Keyboard</string>
+    <string name="tutorial">Tutorial</string>
+    <string name="how_to_use_keybee">How to use Keybee Keyboard</string>
+    <string name="the_keybee_project">The Keybee Keyboard project</string>
+    <string name="discover_new_way">Discover the new way of typing</string>
+    <string name="main_settings">Main settings</string>
+    <string name="layout">Layout and pop-up</string>
+    <string name="layout_dialog">Layout</string>
+    <string name="theme">Theme</string>
+    <string name="twipe">Twipe</string>
+    <string name="twipe_intro">Enable tap + swipe on adjacent letters</string>
+    <string name="size_settings">Size settings</string>
+    <string name="top_gap">Top gap fill</string>
+    <string name="top_gap_intro">Show or hide top gap for pop-up</string>
+    <string name="full_width">Full width</string>
+    <string name="full_width_intro">Fits the entire width of the device</string>
+    <string name="size">Size</string>
+    <string name="alignment">Alignment</string>
+    <string name="literal_gap_intro">The background color fills the entire width</string>
+    <string name="lateral_gap_fill">Lateral gap fill</string>
+    <string name="text_settings">Text settings</string>
+    <string name="dot_space">Dot + space</string>
+    <string name="dot_space_intro">Go to main keyboard after dot + space</string>
+    <string name="letter_preview">Letter preview</string>
+    <string name="letter_preview_intro">Show the preview on key press</string>
+    <string name="feedback_settings">Feedback settings</string>
+    <string name="sound">Sound</string>
+    <string name="sound_intro">Enable sound on tap or twipe</string>
+    <string name="vibra">Vibra</string>
+    <string name="vibra_intro">Enable vibration on tap or twipe</string>
+    <string name="links">Links</string>
+    <string name="link_keybee">www.keybeekeyboard.com</string>
+    <string name="link_keybee_contest">Keybee Keyboard speed contest</string>
+    <string name="link_keybee_contest_msg">Make the History and brake the world record for typing speed</string>
+    <string name="official_website">Official website</string>
+    <string name="open_source">We are Open Source on GitHub</string>
+    <string name="link_github_intro">Contribute to make this project awesome</string>
+    <string name="facebook">Facebook</string>
+    <string name="link_facebook_intro">Like Keybee and share with friends</string>
+    <string name="twitter">X (ex Twitter)</string>
+    <string name="link_twitter_intro">Follow Keybee for updates and news</string>
+    <string name="linkedin">LinkedIn</string>
+    <string name="link_linkedin_intro">Keybee Keyboard for business related topics</string>
+    <string name="donate">Donate</string>
+    <string name="donate_title">Keybee Keyboard is free and always will be</string>
+    <string name="donate_intro">Donations will be used to improve the project</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="default_">Default</string>
+    <string name="tablet_small">Tablet small</string>
+    <string name="tablet_medium">Tablet medium</string>
+    <string name="tablet_large">Tablet large</string>
+    <string name="phone_small">Smartphone small</string>
+    <string name="phone_medium">Smartphone medium</string>
+    <string name="phone_large">Smartphone large</string>
+    <string name="right">Right</string>
+    <string name="center">Center</string>
+    <string name="left">Left</string>
+    <string name="dark">Dark</string>
+    <string name="light">Light</string>
+    <string name="msg_instruct_language">Thank you for downloading\nKeybee Keyboard.\n\nPlease select your layout:</string>
+    <string name="popup">Pop-up</string>
+    <string name="english">English (default)</string>
+    <string name="spanish">Español</string>
+    <string name="italian">Italiano</string>
+    <string name="german">Deutsch</string>
+    <string name="msg_enable_keybee">Enable Keybee Keyboard and\nset as default keyboard</string>
+    <string name="button1_enable_keybee">1. Enable Keybee Keyboard</string>
+    <string name="button2_choose_keybee">2. Choose Keybee Keyboard</string>
+    <string name="p1_5">1/5</string>
+    <string name="p2_5">2/5</string>
+    <string name="msg_select_theme">Awesome, Keybee Keyboard is enabled. Now please select a theme:</string>
+    <string name="p3_5">3/5</string>
+    <string name="msg_tutorial">With Keybee Keyboard you can twipe:\ntap and swipe over adjacent letters</string>
+    <string name="p4_5">4/5</string>
+    <string name="msg_enjoy">Enjoy the new way of typing.\nFor free. Forever.</string>
+    <string name="m_j"><![CDATA[M&J&L]]></string>
+    <string name="p5_5">5/5</string>
+    <string name="msg_already_enabled">Keybee Keyboard is already enabled</string>
+    <string name="next">Next</string>
+    <string name="project_info_1">We want to create the fastest, the most accurate and comfortable touchscreen keyboard in the World</string>
+    <string name="project_info_2" formatted="false">We live in a World where the keyboard is the most used mobile application, but we type with a layout which belongs to something else.\n\nIn 1863 Christopher Sholes wanted to fix the jams on typewriters. So he moved to the opposite the most frequent letters and letter-pairs to improve typing with both hands. The qwerty keyboard was invented.\n\nThe success of qwerty was so huge that the same layout is still used today as input device on computer keyboard.\n\nIn 2007 the mobile world became touch friendly. Smartphones became our daily pocket computer and the touchscreen was introduced to use the phone with one hand.\n\nBut typing on a physical keyboard and on a touchscreen is not the same:
+    \n1 - different number of fingers necessary to type: ten vs one
+    \n2 - different gestures: no-swipe vs swipe
+    So sharing the same qwerty layout is not efficient.\n\nThis incompatibility created an usability problem because the device was adapted to the keyboard. How?
+    \n1 - Less space: limited key size and useless gap between keys
+    \n2 - Low speed: no swipe friendly, slow typing because floating fingers through the borders
+    \n3 - Less comfort: no ergonomics and uncomfortable typing, we are forced to type with two hands or switch the phone to landscape.
+    \n\nTo fix this problem we adapted the keyboard to the device. How?
+    \n1 - we optimized the space by using an hexagonal structure the most efficient structure in Nature, which increases the key size in the same device area up to 50%
+    \n2 - we increased the typing speed up to 50% by making more swipe friendly connections between letters and letter-pairs and by removing the gaps between keys
+    \n3 - we improved ergonomics by arranging the layout around the center of the screen to type easily with just one finger. No need for two hands for typing.\n\nDiscover the new way of typing. For free. Forever.</string>
+    <string name="project_info_3">The Qwerty on touchscreen is like using a steering wheel on a bicycle: just because I can turn it doesn’t mean that the controller should be like this. A bicycle needs a controller designed for it: the handlebar. A touchscreen needs a keyboard designed for it: Keybee Keyboard.
+        \n\nI want to give Keybee Keybee for free because the keyboard is the basic human - device interaction and because it is universal. It involves all People in the World, no matter the age they have, the language they speak or the place they live. And all the greatest tech innovations are free.
+        \n\nI would like to thank all the Keybee Keyboard users who gave me the strength to continue this project even without external investments through their messages, reviews, previous subscriptions and purchases.\n\nFrom 2025 Keybee Keyboard became full free, ads free and Open Source with the permissive license Apache 2.0. I hope that the dev Community can make this project awesome and together we can reach the visibility that Keybee Keyboard deserves. I mean, we don’t have to go to Mars with the qwerty layout, right?\n\nMarco Papalia.</string>
+    <string name="sym">sym</string>
+    <string name="abc">ABC</string>
+    <string name="backspace">←</string>
+    <string name="enter">↵</string>
+    <string name="capslock">⇪</string>
+    <string name="_123">123</string>
+    <string name="en">en</string>
+    <string name="en_us">en-rUS</string>
+    <string name="it">it</string>
+    <string name="es">es</string>
+    <string name="de">de</string>
+    <string name="key_font">@string/font_roboto_light</string>
+    <string name="why_keybee">Why Keybee Keyboard</string>
+    <string name="thoughts_from_founder">Thoughts from the founder</string>
+    <string name="eur">€ - EUR</string>
+    <string name="usd">$ - USD</string>
+    <string name="gbp">£ - GBP</string>
+    <string name="currency_selection">Currency selection</string>
+    <string name="notification_sync_message">Amazing! Keybee Keyboard notifications are now synced with your device notification</string>
+    <string name="cursor_editing">Cursor editing</string>
+    <string name="dot_apostrophe">Dot position</string>
+    <string name="cursor_intro">Hold the space key to move the cursor</string>
+    <string name="dot_or_apostorphe_intro">Dot key on main keyboard</string>
+    <string name="keybee_spellchecker">Keybee Keyboard SpellChecker</string>
+    <string name="text_suggestion">Text suggestion</string>
+    <string name="text_suggestion_intro">Suggest words while typing</string>
+    <string name="text_autoCapitalization_intro">Disable uppercase on first letter</string>
+    <string name="text_autoCapitalization">Autocapitalization</string>
+    <string name="auto_correction">Auto correction</string>
+
+    <!-- Not to define in other language strings.xml -->
+    <string name="auto_correction_intro">Correct typing mistakes</string>
+    <string name="auto_completion">Auto completion</string>
+    <string name="auto_completion_intro">Suggest words while typing</string>
+    <string name="language_dictionary">Language dictionary</string>
+    <string name="language_dictionary_intro">Add a language to the dictionary</string>
+    <string name="title_enable_spell">Enable spell checker</string>
+    <string name="msg_enable_spell">"The Keybee Keyboard text suggestion works only with your native Google or Android Spell Checker. Please enable it in \"Language &amp; input\" settings to use with Keybee."</string>
+    <string name="settings">Settings</string>
+    <string name="info">Info</string>
+    <string name="keybee_theme_market">Keybee Keyboard themes</string>
+    <string name="custom_layout">Keybee Keyboard custom layout</string>
+    <string name="theme_info">Tap on the theme to see and use your favourite one.</string>
+    <string name="theme_info_OLD">Tap on the theme to see, use or buy your favourite one. A theme costs only 1€ like a coffee in Italy.\n\nIf you have purchased a theme from a different device, please reinstall Keybee Keyboard to sync and use your purchased themes.</string>
+    <string name="layout_info">To customize the layout fill the column on the right with the desired letter. \n\nTo customize the pop-up press the underlined letter on the left column and then reorder the special letters with the up and down arrows as you like.</string>
+    <string name="layout_info_OLD">To customize the layout fill the column on the right with the desired letter. \n\nCustom layout is available only with Keybee subscription. \n\nTo customize the pop-up press the underlined letter on the left column and then reorder the special letters with the up and down arrows as you like. \n\nCustom pop-up is available fore free without Keybee subscription.</string>
+    <string name="use">USE</string>
+    <string name="purchased">PURCHASED</string>
+    <string name="free">FREE</string>
+    <string name="buy">BUY</string>
+    <string name="CANCEL" tools:ignore="ButtonCase">CANCEL</string>
+    <string name="CUSTOMIZE" >CUSTOMIZE</string>
+    <string name="loading">Loading…</string>
+    <string name="more_themes">More themes…</string>
+    <string name="msg_purchase_finish">Thank you for your purchase!</string>
+    <string name="theme_info_title">Welcome to the Keybee Keyboard themes!</string>
+    <string name="theme_and_colors">Theme, colors and layout</string>
+    <string name="choose_your_theme">Theme and colors</string> <!-- Choose your theme -->
+    <string name="theme_subsription">Keybee Keyboard subscription</string>
+    <string name="get_free_access_to_all_themes">Free access to all themes and custom layout</string>
+    <string name="notification">Notifications</string>
+    <string name="keep_me_updated_about_keybee">Tap to sync new devices with our push notifications</string>
+    <string name="message_free_subscription">With Keybee Keyboard subscription: \n\nYou will get free access to all the current and future Keybee Keyboard themes. You can use or switch theme whenever you like without paying theme individually. \n\nYou can customise the selected layout by moving all the letters around the main keyboard. \n\nYou will help to improve the quality of the key bee project with new features, new layouts, new themes and more frequent updates.so if you also want support us, this subscription os the best way to make Keybee Keyboard better. \n\nImportant note: you can view the status of your subscription and cancel it if necessary from the My Apps Screen in the Play Store app. \n\n\nThank You!\n </string>
+    <string name="subscribe">SUBSCRIBE</string>
+    <string name="reset">RESET</string>
+
+    <string-array name="keyboard_size">
+        <item>@string/tablet_small</item>
+        <item>@string/tablet_medium</item>
+        <item>@string/tablet_large</item>
+        <item>@string/phone_small</item>
+        <item>@string/phone_medium</item>
+        <item>@string/phone_large</item>
+    </string-array>
+    <string-array name="alignments">
+        <item>@string/right</item>
+        <item>@string/center</item>
+        <item>@string/left</item>
+    </string-array>
+    <string-array name="themes">
+        <item>@string/dark</item>
+        <item>@string/light</item>
+    </string-array>
+    <string-array name="currency">
+        <item>@string/eur</item>
+        <item>@string/usd</item>
+        <item>@string/gbp</item>
+    </string-array>
+    <string-array name="layout">
+        <item>@string/english</item>
+        <item>@string/italian</item>
+        <item>@string/spanish</item>
+        <item>@string/german</item>
+    </string-array>
+    <string-array name="layout_language_code">
+        <item>@string/en</item>
+        <item>@string/it</item>
+        <item>@string/es</item>
+        <item>@string/de</item>
+    </string-array>
+    <string-array name="language_code">
+        <item>@string/en_us</item>
+        <item>@string/it</item>
+        <item>@string/es</item>
+        <item>@string/de</item>
+    </string-array>
+
+
+    <string name="A">A</string>
+    <string name="B">B</string>
+    <string name="C">C</string>
+    <string name="D">D</string>
+    <string name="E">E</string>
+    <string name="F">F</string>
+    <string name="G">G</string>
+    <string name="H">H</string>
+    <string name="I">I</string>
+    <string name="J">J</string>
+    <string name="K">K</string>
+    <string name="L">L</string>
+    <string name="M">M</string>
+    <string name="N">N</string>
+    <string name="O">O</string>
+    <string name="P">P</string>
+    <string name="Q">Q</string>
+    <string name="R">R</string>
+    <string name="S">S</string>
+    <string name="T">T</string>
+    <string name="U">U</string>
+    <string name="V">V</string>
+    <string name="W">W</string>
+    <string name="X">X</string>
+    <string name="Y">Y</string>
+    <string name="Z">Z</string>
+
+    <string-array name="alphabet">
+        <item>@string/A</item>
+        <item>@string/B</item>
+        <item>@string/C</item>
+        <item>@string/D</item>
+        <item>@string/E</item>
+        <item>@string/F</item>
+        <item>@string/G</item>
+        <item>@string/H</item>
+        <item>@string/I</item>
+        <item>@string/J</item>
+        <item>@string/K</item>
+        <item>@string/L</item>
+        <item>@string/M</item>
+        <item>@string/N</item>
+        <item>@string/O</item>
+        <item>@string/P</item>
+        <item>@string/Q</item>
+        <item>@string/R</item>
+        <item>@string/S</item>
+        <item>@string/T</item>
+        <item>@string/U</item>
+        <item>@string/V</item>
+        <item>@string/W</item>
+        <item>@string/X</item>
+        <item>@string/Y</item>
+        <item>@string/Z</item>
+    </string-array>
+
+</resources>

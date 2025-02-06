@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<it.keybeeproject.keybee.view.CheckedTextViewCustom
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:id="@android:id/text1"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:paddingTop="@dimen/dp10"
+	android:paddingBottom="@dimen/dp10"
+	android:paddingLeft="@dimen/dp15"
+	android:paddingRight="@dimen/dp15"
+	android:drawableLeft="?android:attr/listChoiceIndicatorSingle"
+	android:textColor="@color/black"
+	android:drawablePadding="@dimen/dp10"
+	android:gravity="center_vertical"
+	android:textSize="@dimen/sp18"
+	app:custom_font="@string/font_dosis_regular"/>

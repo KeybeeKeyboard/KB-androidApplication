@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/relative_keyboard"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent">
+
+    <RelativeLayout
+        android:id="@+id/relative_keyboardContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:paddingTop="@dimen/dp15"
+        android:paddingBottom="@dimen/dp5">
+
+
+        <LinearLayout
+            android:id="@+id/linear_candidateView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp40"
+            android:gravity="bottom|center"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                android:id="@+id/text_candidate1"
+                style="@style/TextCandidate"
+                app:custom_font="@string/font_roboto_light" />
+
+            <View
+                android:id="@+id/view_candidateDivider1"
+                android:layout_width="@dimen/dp1"
+                android:layout_height="match_parent"
+                android:background="@android:color/darker_gray" />
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                android:id="@+id/text_candidate2"
+                style="@style/TextCandidate"
+                app:custom_font="@string/font_roboto_light" />
+
+            <View
+                android:id="@+id/view_candidateDivider2"
+                android:layout_width="@dimen/dp1"
+                android:layout_height="match_parent"
+                android:background="@android:color/darker_gray" />
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                android:id="@+id/text_candidate3"
+                style="@style/TextCandidate"
+                app:custom_font="@string/font_roboto_light" />
+        </LinearLayout>
+
+        <it.keybeeproject.keybee.view.ButtonHexagon
+            android:id="@+id/button1"
+            style="@style/ButtonHexagonLowerHalf"
+            android:layout_below="@id/linear_candidateView"
+            android:layout_marginLeft="0dp"
+            app:hexagonShape="lower_half"
+            app:previewEnabled="false" />
+
+        <it.keybeeproject.keybee.view.ButtonHexagon
+            android:id="@+id/button2"
+            style="@style/ButtonHexagonFull"
+            android:layout_below="@id/linear_candidateView"
+            android:layout_alignLeft="@id/button1"
+            app:custom_font="@string/key_font"
+            app:hexagonShape="full" />
+
+        <it.keybeeproject.keybee.view.ButtonHexagon
+            android:id="@+id/button3"
+            style="@style/ButtonHexagonLowerHalf"
+            android:layout_below="@id/linear_candidateView"
+            android:layout_alignLeft="@id/button2"
+            app:hexagonShape="lower_half"
+            app:previewEnabled="false" />
+
+        <it.keybeeproject.keybee.view.ButtonHexagon
+            android:id="@+id/button4"
+            style="@style/ButtonHexagonFull"
+            android:layout_below="@id/linear_candidateView"
+            android:layout_alignLeft="@id/button3"
+            app:custom_font="@string/key_font"
+            app:hexagonShape="full" />
+
+        <it.keybeeproject.keybee.view.ButtonHexagon
+            android:id="@+id/button5"
+            style="@style/ButtonHexagonLowerHalf"
+            android:layout_below="@id/linear_candidateView"
+            android:layout_alignLeft="@id/button4"
+            app:hexagonShape="lower_half"
+            app:previewEnabled="false" />
+
+        <it.keybeeproject.keybee.view.ButtonHexagon
+            android:id="@+id/button6"
+            style="@style/ButtonHexagonFull"
+            android:layout_below="@id/linear_candidateView"
+            android:layout_alignLeft="@id/button5"
+            app:custom_font="@string/key_font"
+            app:hexagonShape="full" />
+
+        <it.keybeeproject.keybee.view.ButtonHexagon
+            android:id="@+id/button7"
+            style="@style/ButtonHexagonLowerHalf"
+            android:layout_below="@id/linear_candidateView"
+            android:layout_alignLeft="@id/button6"
+            app:hexagonShape="lower_half"
+            app:previewEnabled="false" />
+
+        <it.keybeeproject.keybee.view.ButtonHexagon
+            android:id="@+id/button8"
+            style="@style/ButtonHexagonFull"
+            android:layout_below="@id/button1"
+            android:layout_marginLeft="0dp"
+            app:custom_font="@string/key_font"
+            app:hexagonShape="full" />
+
+        <it.keybeeproject.keybee.view.ButtonHexagon
+            android:id="@+id/button9"
+            style="@style/ButtonHexagonFull"
+            android:layout_below="@id/button2"
+            android:layout_alignLeft="@id/button8"
+            app:custom_font="@string/key_font"
+            app:hexagonShape="full" />
+
+        <it.keybeeproject.keybee.view.ButtonHexagon
+            android:id="@+id/button10"
+            style="@style/ButtonHexagonFull"
+            android:layout_below="@id/button3"
+            android:layout_alignLeft="@id/button9"
+            app:custom_font="@string/key_font"
+            app:hexagonShape="full" />
+
+        <it.keybeeproject.keybee.view.ButtonHexagon
+            android:id="@+id/button11"
+            style="@style/ButtonHexagonFull"
+            android:layout_below="@id/button4"
+            android:layout_alignLeft="@id/button10"
+            app:custom_font="@string/key_font"
+            app:hexagonShape="full" />
+
+        <it.keybeeproject.keybee.view.ButtonHexagon
+            android:id="@+id/button12"
+            style="@style/ButtonHexagonFull"
+            android:layout_below="@id/button5"
+            android:layout_alignLeft="@id/button11"
+            app:custom_font="@string/key_font"
+            app:hexagonShape="full" />
+
+        <it.keybeeproject.keybee.view.ButtonHexagon
+            android:id="@+id/button13"
+            style="@style/ButtonHexagonFull"
+            android:layout_below="@id/button6"
+            android:layout_alignLeft="@id/button12"
+            app:custom_font="@string/key_font"
+            app:hexagonShape="full" />
+
+        <it.keybeeproject.keybee.view.ButtonHexagon
+            android:id="@+id/button14"
+            style="@style/ButtonHexagonFull"
+            android:layout_below="@id/button7"
+            android:layout_alignLeft="@id/button13"
+            app:custom_font="@string/key_font"
+            app:hexagonShape="full" />
+
+        <it.keybeeproject.keybee.view.ButtonHexagon
+            android:id="@+id/button15"
+            style="@style/ButtonHexagonFull"
+            android:layout_below="@id/button8"
+            android:layout_marginLeft="0dp"
+            app:custom_font="@string/key_font"
+            app:hexagonShape="full" />
+
+        <it.keybeeproject.keybee.view.ButtonHexagon
+            android:id="@+id/button16"
+            style="@style/ButtonHexagonFull"
+            android:layout_below="@id/button9"
+            android:layout_alignLeft="@id/button15"
+            app:custom_font="@string/key_font"
+            app:hexagonShape="full" />
+
+        <it.keybeeproject.keybee.view.ButtonHexagon
+            android:id="@+id/button17"
+            style="@style/ButtonHexagonFull"
+            android:layout_below="@id/button10"
+            android:layout_alignLeft="@id/button16"
+            app:custom_font="@string/key_font"
+            app:hexagonShape="full" />
+
+        <it.keybeeproject.keybee.view.ButtonHexagon
+            android:id="@+id/button18"
+            style="@style/ButtonHexagonFull"
+            android:layout_below="@id/button11"
+            android:layout_alignLeft="@id/button17"
+            app:custom_font="@string/key_font"
+            app:hexagonShape="full"
+            app:longClickEnabled="true"
+            app:previewEnabled="false" />
+
+        <it.keybeeproject.keybee.view.ButtonHexagon
+            android:id="@+id/button19"
+            style="@style/ButtonHexagonFull"
+            android:layout_below="@id/button12"
+            android:layout_alignLeft="@id/button18"
+            app:custom_font="@string/key_font"
+            app:hexagonShape="full" />
+
+        <it.keybeeproject.keybee.view.ButtonHexagon
+            android:id="@+id/button20"
+            style="@style/ButtonHexagonFull"
+            android:layout_below="@id/button13"
+            android:layout_alignLeft="@id/button19"
+            app:custom_font="@string/key_font"
+            app:hexagonShape="full" />
+
+        <it.keybeeproject.keybee.view.ButtonHexagon
+            android:id="@+id/button21"
+            style="@style/ButtonHexagonFull"
+            android:layout_below="@id/button14"
+            android:layout_alignLeft="@id/button20"
+            app:custom_font="@string/key_font"
+            app:hexagonShape="full" />
+
+        <it.keybeeproject.keybee.view.ButtonHexagon
+            android:id="@+id/button22"
+            style="@style/ButtonHexagonFull"
+            android:layout_below="@id/button15"
+            android:layout_marginLeft="0dp"
+            app:custom_font="@string/key_font"
+            app:hexagonShape="full" />
+
+        <it.keybeeproject.keybee.view.ButtonHexagon
+            android:id="@+id/button23"
+            style="@style/ButtonHexagonFull"
+            android:layout_below="@id/button16"
+            android:layout_alignLeft="@id/button22"
+            app:custom_font="@string/key_font"
+            app:hexagonShape="full" />
+
+        <it.keybeeproject.keybee.view.ButtonHexagon
+            android:id="@+id/button24"
+            style="@style/ButtonHexagonFull"
+            android:layout_below="@id/button17"
+            android:layout_alignLeft="@id/button23"
+            app:custom_font="@string/key_font"
+            app:hexagonShape="full" />
+
+        <it.keybeeproject.keybee.view.ButtonHexagon
+            android:id="@+id/button25"
+            style="@style/ButtonHexagonFull"
+            android:layout_below="@id/button18"
+            android:layout_alignLeft="@id/button24"
+            app:custom_font="@string/key_font"
+            app:hexagonShape="full" />
+
+        <it.keybeeproject.keybee.view.ButtonHexagon
+            android:id="@+id/button26"
+            style="@style/ButtonHexagonFull"
+            android:layout_below="@id/button19"
+            android:layout_alignLeft="@id/button25"
+            app:custom_font="@string/key_font"
+            app:hexagonShape="full" />
+
+        <it.keybeeproject.keybee.view.ButtonHexagon
+            android:id="@+id/button27"
+            style="@style/ButtonHexagonFull"
+            android:layout_below="@id/button20"
+            android:layout_alignLeft="@id/button26"
+            app:custom_font="@string/key_font"
+            app:hexagonShape="full" />
+
+        <it.keybeeproject.keybee.view.ButtonHexagon
+            android:id="@+id/button28"
+            style="@style/ButtonHexagonFull"
+            android:layout_below="@id/button21"
+            android:layout_alignLeft="@id/button27"
+            app:custom_font="@string/key_font"
+            app:hexagonShape="full" />
+
+        <it.keybeeproject.keybee.view.ButtonHexagon
+            android:id="@+id/button29"
+            style="@style/ButtonHexagonFull"
+            android:layout_below="@id/button22"
+            android:layout_marginLeft="0dp"
+            app:custom_font="@string/key_font"
+            app:hexagonShape="full" />
+
+        <it.keybeeproject.keybee.view.ButtonHexagon
+            android:id="@+id/button30"
+            style="@style/ButtonHexagonFull"
+            android:layout_below="@id/button23"
+            android:layout_alignLeft="@id/button29"
+            app:custom_font="@string/key_font"
+            app:doubleTapEnabled="true"
+            app:hexagonShape="full"
+            app:isSpecialKey="true"
+            app:longClickEnabled="true"
+            app:previewEnabled="false" />
+
+        <it.keybeeproject.keybee.view.ButtonHexagon
+            android:id="@+id/button31"
+            style="@style/ButtonHexagonFull"
+            android:layout_below="@id/button24"
+            android:layout_alignLeft="@id/button30"
+            app:custom_font="@string/key_font"
+            app:hexagonShape="full" />
+
+        <it.keybeeproject.keybee.view.ButtonHexagon
+            android:id="@+id/button32"
+            style="@style/ButtonHexagonFull"
+            android:layout_below="@id/button25"
+            android:layout_alignLeft="@id/button31"
+            app:custom_font="@string/key_font"
+            app:hexagonShape="full"
+            app:isSpecialKey="true"
+            app:previewEnabled="false" />
+
+        <it.keybeeproject.keybee.view.ButtonHexagon
+            android:id="@+id/button33"
+            style="@style/ButtonHexagonFull"
+            android:layout_below="@id/button26"
+            android:layout_alignLeft="@id/button32"
+            app:custom_font="@string/key_font"
+            app:hexagonShape="full" />
+
+        <it.keybeeproject.keybee.view.ButtonHexagon
+            android:id="@+id/button34"
+            style="@style/ButtonHexagonFull"
+            android:layout_below="@id/button27"
+            android:layout_alignLeft="@id/button33"
+            app:custom_font="@string/key_font"
+            app:hexagonShape="full"
+            app:icon="@drawable/ic_delete"
+            app:isSpecialKey="true"
+            app:previewEnabled="false"
+            app:repetitiveEnabled="true" />
+
+        <it.keybeeproject.keybee.view.ButtonHexagon
+            android:id="@+id/button35"
+            style="@style/ButtonHexagonFull"
+            android:layout_below="@id/button28"
+            android:layout_alignLeft="@id/button34"
+            app:custom_font="@string/key_font"
+            app:hexagonShape="full" />
+
+        <it.keybeeproject.keybee.view.ButtonHexagon
+            android:id="@+id/button36"
+            style="@style/ButtonHexagonUpperHalf"
+            android:layout_below="@id/button29"
+            android:layout_marginLeft="0dp"
+            android:paddingBottom="@dimen/dp2"
+            app:custom_font="@string/font_dosis_light"
+            app:hexagonShape="upper_half"
+            app:icon="@drawable/ic_settings"
+            app:longClickEnabled="true"
+            app:previewEnabled="false" />
+
+        <it.keybeeproject.keybee.view.ButtonHexagon
+            android:id="@+id/button37"
+            style="@style/ButtonHexagonUpperHalf"
+            android:layout_below="@id/button31"
+            android:layout_alignLeft="@id/button30"
+            app:hexagonShape="upper_half"
+            app:icon="@drawable/ic_emoticon"
+            app:previewEnabled="false" />
+
+        <it.keybeeproject.keybee.view.ButtonHexagon
+            android:id="@+id/button38"
+            style="@style/ButtonHexagonUpperHalf"
+            android:layout_below="@id/button33"
+            android:layout_alignLeft="@id/button32"
+            app:hexagonShape="upper_half"
+            app:icon="@drawable/ic_enter"
+            app:previewEnabled="false" />
+
+        <it.keybeeproject.keybee.view.ButtonHexagon
+            android:id="@+id/button39"
+            style="@style/ButtonHexagonUpperHalf"
+            android:layout_below="@id/button35"
+            android:layout_alignLeft="@id/button34"
+            app:hexagonShape="upper_half"
+            app:icon="@drawable/ic_align_left"
+            app:longClickEnabled="true"
+            app:previewEnabled="false" />
+
+    </RelativeLayout>
+
+    <it.keybeeproject.keybee.view.ViewSwipe
+        android:id="@+id/view_swipe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@null"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/relative_emoji"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/linear_emojiCategories"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp40"
+            android:background="@color/white">
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                android:id="@+id/text_abc"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/transparent"
+                android:gravity="center"
+                android:text="@string/abc"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp14"
+                app:custom_font="@string/font_roboto_light" />
+
+            <ImageView
+                android:id="@+id/img_cat_people"
+                style="@style/ImgEmojiCategory"
+                android:contentDescription="@string/app_name"
+                app:srcCompat="@drawable/ic_emoji_smilies" />
+
+            <ImageView
+                android:id="@+id/img_cat_nature"
+                style="@style/ImgEmojiCategory"
+                app:srcCompat="@drawable/ic_emoji_nature" />
+
+            <ImageView
+                android:id="@+id/img_cat_thing"
+                style="@style/ImgEmojiCategory"
+                app:srcCompat="@drawable/ic_emoji_thing" />
+
+            <ImageView
+                android:id="@+id/img_cat_place"
+                style="@style/ImgEmojiCategory"
+                app:srcCompat="@drawable/ic_emoji_place" />
+
+            <ImageView
+                android:id="@+id/img_cat_symbol"
+                style="@style/ImgEmojiCategory"
+                app:srcCompat="@drawable/ic_emoji_symbol" />
+
+            <ImageView
+                android:id="@+id/img_cat_flag"
+                style="@style/ImgEmojiCategory"
+                app:srcCompat="@drawable/ic_emoji_flag" />
+
+            <ImageView
+                android:id="@+id/img_delete"
+                style="@style/ImgEmojiCategory"
+                app:srcCompat="@drawable/ic_delete" />
+        </LinearLayout>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/pager_emoji"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/linear_emojiCategories"></androidx.viewpager.widget.ViewPager>
+    </RelativeLayout>
+</RelativeLayout>

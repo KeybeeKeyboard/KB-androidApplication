@@ -1,0 +1,206 @@
+<resources>
+
+	<style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+		<item name="colorPrimary">@color/colorPrimary</item>
+		<item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+		<item name="colorAccent">@color/colorAccent</item>
+	</style>
+
+	<style name="AppThemeNoActionbar" parent="Theme.AppCompat.Light.NoActionBar">
+		<item name="colorPrimary">@color/colorPrimary</item>
+		<item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+		<item name="colorAccent">@color/colorAccent</item>
+	</style>
+
+	<style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+		<item name="colorPrimary">@color/colorPrimary</item>
+		<item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+		<item name="colorAccent">@color/colorAccent</item>
+	</style>
+
+	<style name="ButtonHexagonFull">
+		<item name="android:textColor">@color/white</item>
+		<item name="android:textSize">@dimen/button_text</item>
+		<item name="android:background">@null</item>
+		<item name="android:padding">0dp</item>
+		<item name="android:gravity">center</item>
+		<item name="android:layout_height">@dimen/button_height</item>
+		<item name="android:layout_width">@dimen/button_width</item>
+		<item name="android:layout_marginLeft">@dimen/button_margin_left</item>
+		<item name="android:layout_marginTop">@dimen/button_margin_top</item>
+		<item name="android:textAllCaps">false</item>
+	</style>
+
+	<style name="ButtonHexagonUpperHalf">
+		<item name="android:textColor">@color/black</item>
+		<item name="android:textSize">@dimen/button_text</item>
+		<item name="android:background">@null</item>
+		<item name="android:paddingTop">0dp</item>
+		<item name="android:paddingLeft">0dp</item>
+		<item name="android:paddingRight">0dp</item>
+		<item name="android:paddingBottom">0dp</item>
+		<item name="android:gravity">center</item>
+		<item name="android:layout_height">@dimen/button_height_half</item>
+		<item name="android:layout_width">@dimen/button_width</item>
+		<item name="android:layout_marginLeft">@dimen/button_margin_left</item>
+		<item name="android:layout_marginTop">@dimen/button_margin_top</item>
+		<item name="android:textAllCaps">false</item>
+	</style>
+
+	<style name="ButtonHexagonLowerHalf">
+		<item name="android:textColor">@color/black</item>
+		<item name="android:textSize">@dimen/button_text</item>
+		<item name="android:background">@null</item>
+		<item name="android:padding">0dp</item>
+		<item name="android:gravity">center</item>
+		<item name="android:layout_height">@dimen/button_height_half</item>
+		<item name="android:layout_width">@dimen/button_width</item>
+		<item name="android:layout_marginLeft">@dimen/button_margin_left</item>
+		<item name="android:layout_marginTop">@dimen/button_margin_top</item>
+		<item name="android:textAllCaps">false</item>
+	</style>
+
+	<style name="TextSettingType">
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:textColor">@color/colorAccent</item>
+		<item name="android:textSize">@dimen/text_settings_title</item>
+		<item name="android:layout_marginTop">@dimen/settings_spacing</item>
+		<item name="android:paddingLeft">@dimen/settings_spacing</item>
+		<item name="android:paddingRight">@dimen/settings_spacing</item>
+	</style>
+
+	<style name="LayoutOption">
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_marginTop">@dimen/settings_option_spacing</item>
+		<item name="android:paddingTop">@dimen/settings_option_spacing</item>
+		<item name="android:paddingBottom">@dimen/settings_option_spacing</item>
+		<item name="android:paddingLeft">@dimen/settings_spacing</item>
+		<item name="android:paddingRight">@dimen/settings_spacing</item>
+		<item name="android:orientation">vertical</item>
+	</style>
+
+	<style name="TextOption">
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:textColor">@color/black</item>
+		<item name="android:textSize">@dimen/sp16</item>
+	</style>
+
+	<style name="TextOptionIntro">
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_marginTop">@dimen/dp5</item>
+		<item name="android:textColor">@color/text_gray</item>
+		<item name="android:textSize">@dimen/sp14</item>
+	</style>
+
+	<style name="CheckOption">
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_centerVertical">true</item>
+		<item name="android:layout_alignParentRight">true</item>
+		<item name="android:clickable">false</item>
+	</style>
+
+	<style name="TextInstructHome">
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:gravity">center</item>
+		<item name="android:textSize">@dimen/sp20</item>
+		<item name="android:textColor">@color/gray</item>
+	</style>
+
+	<style name="TextAplhabet">
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">30dp</item>
+		<item name="android:gravity">center</item>
+		<item name="android:layout_gravity">center_vertical</item>
+		<item name="android:layout_weight">1</item>
+		<item name="android:layout_margin">@dimen/dp5</item>
+		<item name="android:textSize">@dimen/sp16</item>
+		<item name="android:textColor">@color/black</item>
+	</style>
+
+	<style name="ArrowImage" >
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">30dp</item>
+		<item name="android:layout_margin">@dimen/dp5</item>
+
+	</style>
+
+	<style name="spinner" parent="Widget.AppCompat.Spinner">
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">@dimen/dp30</item>
+		<item name="android:layout_margin">@dimen/dp5</item>
+		<item name="android:background">@drawable/spinner_bg</item>
+		<item name="android:spinnerMode">dropdown</item>
+	</style>
+
+
+
+
+	<style name="TextPageNo">
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:gravity">center</item>
+		<item name="android:paddingTop">@dimen/dp10</item>
+		<item name="android:paddingBottom">@dimen/dp20</item>
+		<item name="android:textSize">@dimen/sp16</item>
+		<item name="android:textColor">@color/gray</item>
+	</style>
+
+	<style name="Button">
+		<item name="android:layout_width">@dimen/dp200</item>
+		<item name="android:layout_height">@dimen/dp37</item>
+		<item name="android:layout_centerHorizontal">true</item>
+		<item name="android:background">@drawable/bg_button_gray</item>
+		<item name="android:textSize">@dimen/sp16</item>
+		<item name="android:textColor">@color/gray</item>
+		<item name="android:textAllCaps">false</item>
+	</style>
+
+	<style name="ImageLogo">
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:scaleType">centerInside</item>
+		<item name="android:paddingTop">@dimen/dp50</item>
+		<item name="android:paddingBottom">@dimen/dp50</item>
+		<item name="android:src">@drawable/img_logo</item>
+	</style>
+
+	<style name="TextProjectInfoTitle">
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:textSize">@dimen/sp14</item>
+		<item name="android:textColor">@color/gray</item>
+		<item name="android:gravity">center</item>
+	</style>
+
+	<style name="TextProjectInfoContent">
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:textSize">@dimen/sp14</item>
+		<item name="android:textColor">@color/gray</item>
+	</style>
+
+	<style name="ImgEmojiCategory">
+		<item name="android:layout_width">0dp</item>
+		<item name="android:layout_height">match_parent</item>
+		<item name="android:layout_weight">1</item>
+		<item name="android:paddingTop">@dimen/dp10</item>
+		<item name="android:paddingBottom">@dimen/dp10</item>
+	</style>
+
+	<style name="TextCandidate">
+		<item name="android:layout_width">0dp</item>
+		<item name="android:layout_height">match_parent</item>
+		<item name="android:layout_weight">1</item>
+		<item name="android:textSize">@dimen/sp18</item>
+		<item name="android:textColor">@color/black</item>
+		<item name="android:gravity">center</item>
+		<item name="android:singleLine">true</item>
+		<item name="android:ellipsize">middle</item>
+	</style>
+</resources>

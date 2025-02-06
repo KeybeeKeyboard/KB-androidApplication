@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<declare-styleable name="ButtonHexagon">
+		<attr name="hexagonShape" format="enum">
+			<enum name="full" value="1"/>
+			<enum name="upper_half" value="2"/>
+			<enum name="lower_half" value="3"/>
+		</attr>
+		<attr name="repetitiveEnabled" format="boolean"/>
+		<attr name="doubleTapEnabled" format="boolean"/>
+		<attr name="previewEnabled" format="boolean"/>
+		<attr name="longClickEnabled" format="boolean"/>
+		<attr name="isSpecialKey" format="boolean"/>
+		<attr name="icon" format="reference"/>
+	</declare-styleable>
+
+	<declare-styleable name="CustomFont">
+		<attr name="custom_font" format="string"/>
+	</declare-styleable>
+</resources>

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.onesignal:in-app-messages:5.2.0-beta-02@aar" external-system-id="GRADLE">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/8.11/transforms/3fbfa646a3e9ab595de453bbe3e30e85/transformed/jetified-in-app-messages-5.2.0-beta-02/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/8.11/transforms/3fbfa646a3e9ab595de453bbe3e30e85/transformed/jetified-in-app-messages-5.2.0-beta-02/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/8.11/transforms/3fbfa646a3e9ab595de453bbe3e30e85/transformed/jetified-in-app-messages-5.2.0-beta-02/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

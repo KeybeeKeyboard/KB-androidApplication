@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<it.keybeeproject.keybee.view.TextViewCustom xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@android:id/text1"
+    android:layout_width="@dimen/dp50"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/sp16"
+    android:padding="@dimen/dp3"
+    android:text="@string/A"
+    android:gravity="start"
+    android:textColor="@color/black"
+    app:custom_font="@string/font_dosis_regular" />

@@ -1,0 +1,702 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="it.keybeeproject.keybee.activity.SettingsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/settings_spacing">
+
+        <it.keybeeproject.keybee.view.TextViewCustom
+            style="@style/TextSettingType"
+            android:text="@string/general"
+            app:custom_font="@string/font_dosis_regular" />
+
+        <LinearLayout
+            android:id="@+id/linear_enable"
+            style="@style/LayoutOption">
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                style="@style/TextOption"
+                android:text="@string/enable_keybee"
+                app:custom_font="@string/font_dosis_regular" />
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                style="@style/TextOptionIntro"
+                android:text="@string/activate_select_keybee"
+                app:custom_font="@string/font_dosis_regular" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_tutorial"
+            style="@style/LayoutOption">
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                style="@style/TextOption"
+                android:text="@string/tutorial"
+                app:custom_font="@string/font_dosis_regular" />
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                style="@style/TextOptionIntro"
+                android:text="@string/how_to_use_keybee"
+                app:custom_font="@string/font_dosis_regular" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_projectInfo"
+            style="@style/LayoutOption">
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                style="@style/TextOption"
+                android:text="@string/the_keybee_project"
+                app:custom_font="@string/font_dosis_regular" />
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                style="@style/TextOptionIntro"
+                android:text="@string/discover_new_way"
+                app:custom_font="@string/font_dosis_regular" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp1"
+            android:layout_marginTop="@dimen/dp10"
+            android:background="@color/text_gray" />
+
+
+        <it.keybeeproject.keybee.view.TextViewCustom
+            style="@style/TextSettingType"
+            android:text="@string/theme_and_colors"
+            app:custom_font="@string/font_dosis_regular" />
+
+
+        <RelativeLayout
+            android:id="@+id/linear_free_theme"
+            style="@style/LayoutOption"
+            android:visibility="gone"
+            tools:visibility="gone">
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                android:id="@+id/text_subsc"
+                style="@style/TextOption"
+                android:layout_toStartOf="@+id/img_apply_theme"
+                android:layout_toLeftOf="@+id/img_apply_theme"
+                android:text="@string/theme_subsription"
+                app:custom_font="@string/font_dosis_regular" />
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                android:id="@+id/text_theme_subsription"
+                style="@style/TextOptionIntro"
+                android:layout_below="@id/text_subsc"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentBottom="true"
+                android:layout_toStartOf="@+id/img_apply_theme"
+                android:layout_toLeftOf="@+id/img_apply_theme"
+                android:text="@string/get_free_access_to_all_themes"
+                app:custom_font="@string/font_dosis_regular" />
+
+            <ImageView
+                android:id="@+id/img_apply_theme"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/app_name"
+                android:padding="5dp"
+                android:tint="@color/colorPrimary"
+                app:srcCompat="@drawable/ic_add" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_theme"
+            style="@style/LayoutOption">
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                style="@style/TextOption"
+                android:text="@string/choose_your_theme"
+                app:custom_font="@string/font_dosis_regular" />
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                android:id="@+id/text_themeIntro"
+                style="@style/TextOptionIntro"
+                android:text="@string/dark"
+                app:custom_font="@string/font_dosis_regular" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_layout"
+            style="@style/LayoutOption">
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                style="@style/TextOption"
+                android:text="@string/layout"
+                app:custom_font="@string/font_dosis_regular" />
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                android:id="@+id/text_layoutIntro"
+                style="@style/TextOptionIntro"
+                app:custom_font="@string/font_dosis_regular" />
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp1"
+            android:layout_marginTop="@dimen/dp10"
+            android:background="@color/text_gray" />
+
+        <it.keybeeproject.keybee.view.TextViewCustom
+            style="@style/TextSettingType"
+            android:text="@string/main_settings"
+            app:custom_font="@string/font_dosis_regular" />
+
+
+        <!--<LinearLayout-->
+        <!--android:id="@+id/linear_theme"-->
+        <!--style="@style/LayoutOption">-->
+
+        <!--<it.keybeeproject.keybee.view.TextViewCustom-->
+        <!--style="@style/TextOption"-->
+        <!--android:text="@string/theme"-->
+        <!--app:custom_font="@string/font_dosis_regular" />-->
+
+        <!--<it.keybeeproject.keybee.view.TextViewCustom-->
+        <!--android:id="@+id/text_themeIntro"-->
+        <!--style="@style/TextOptionIntro"-->
+        <!--app:custom_font="@string/font_dosis_regular" />-->
+        <!--</LinearLayout>-->
+
+        <LinearLayout
+            android:id="@+id/linear_currency"
+            style="@style/LayoutOption">
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                style="@style/TextOption"
+                android:text="@string/currency_selection"
+                app:custom_font="@string/font_dosis_regular" />
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                android:id="@+id/text_selectedCurrency"
+                style="@style/TextOptionIntro"
+                app:custom_font="@string/font_dosis_regular" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/relative_twipe"
+            style="@style/LayoutOption">
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                android:id="@+id/text_twipe"
+                style="@style/TextOption"
+                android:layout_toLeftOf="@+id/check_twipe"
+                android:layout_toStartOf="@+id/check_twipe"
+                android:text="@string/twipe"
+                app:custom_font="@string/font_dosis_regular" />
+            `
+
+            <CheckBox
+                android:id="@+id/check_twipe"
+                style="@style/CheckOption" />
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                style="@style/TextOptionIntro"
+                android:layout_below="@id/text_twipe"
+                android:layout_toLeftOf="@id/check_twipe"
+                android:text="@string/twipe_intro"
+                app:custom_font="@string/font_dosis_regular" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relative_cursor"
+            style="@style/LayoutOption">
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                android:id="@+id/text_cursor"
+                style="@style/TextOption"
+                android:layout_toLeftOf="@+id/check_cursor"
+                android:layout_toStartOf="@+id/check_cursor"
+                android:text="@string/cursor_editing"
+                app:custom_font="@string/font_dosis_regular" />
+
+            <CheckBox
+                android:id="@+id/check_cursor"
+                style="@style/CheckOption" />
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                style="@style/TextOptionIntro"
+                android:layout_below="@id/text_cursor"
+                android:layout_toLeftOf="@id/check_cursor"
+                android:text="@string/cursor_intro"
+                app:custom_font="@string/font_dosis_regular" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relative_notification"
+            style="@style/LayoutOption">
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                android:id="@+id/text_notification"
+                style="@style/TextOption"
+                android:layout_toLeftOf="@+id/check_notification"
+                android:layout_toStartOf="@+id/check_notification"
+                android:text="@string/notification"
+                app:custom_font="@string/font_dosis_regular" />
+
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                style="@style/TextOptionIntro"
+                android:layout_below="@id/text_notification"
+                android:layout_toLeftOf="@+id/check_notification"
+                android:layout_toStartOf="@+id/check_notification"
+                android:text="@string/keep_me_updated_about_keybee"
+                app:custom_font="@string/font_dosis_regular" />
+
+            <CheckBox
+                android:id="@+id/check_notification"
+                style="@style/CheckOption"
+                android:checked="true" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp1"
+            android:layout_marginTop="@dimen/dp10"
+            android:background="@color/text_gray" />
+
+        <it.keybeeproject.keybee.view.TextViewCustom
+            style="@style/TextSettingType"
+            android:text="@string/size_settings"
+            app:custom_font="@string/font_dosis_regular" />
+
+
+        <RelativeLayout
+            android:id="@+id/relative_fullWidth"
+            style="@style/LayoutOption">
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                android:id="@+id/text_fullWidth"
+                style="@style/TextOption"
+                android:layout_toLeftOf="@+id/check_fullWidth"
+                android:layout_toStartOf="@+id/check_fullWidth"
+                android:text="@string/full_width"
+                app:custom_font="@string/font_dosis_regular" />
+
+            <CheckBox
+                android:id="@+id/check_fullWidth"
+                style="@style/CheckOption" />
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                style="@style/TextOptionIntro"
+                android:layout_below="@id/text_fullWidth"
+                android:layout_toLeftOf="@id/check_fullWidth"
+                android:text="@string/full_width_intro"
+                app:custom_font="@string/font_dosis_regular" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_size"
+            style="@style/LayoutOption">
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                android:id="@+id/text_size"
+                style="@style/TextOption"
+                android:text="@string/size"
+                app:custom_font="@string/font_dosis_regular" />
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                android:id="@+id/text_sizeIntro"
+                style="@style/TextOptionIntro"
+                app:custom_font="@string/font_dosis_regular" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_alignment"
+            style="@style/LayoutOption">
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                android:id="@+id/text_alignment"
+                style="@style/TextOption"
+                android:text="@string/alignment"
+                app:custom_font="@string/font_dosis_regular" />
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                android:id="@+id/text_alignmentIntro"
+                style="@style/TextOptionIntro"
+                app:custom_font="@string/font_dosis_regular" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/relative_lateralGap"
+            style="@style/LayoutOption">
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                android:id="@+id/text_lateralGap"
+                style="@style/TextOption"
+                android:layout_toLeftOf="@+id/check_lateralGap"
+                android:layout_toStartOf="@+id/check_lateralGap"
+                android:text="@string/lateral_gap_fill"
+                app:custom_font="@string/font_dosis_regular" />
+
+            <CheckBox
+                android:id="@+id/check_lateralGap"
+                style="@style/CheckOption" />
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                android:id="@+id/text_lateralGapIntro"
+                style="@style/TextOptionIntro"
+                android:layout_below="@id/text_lateralGap"
+                android:layout_toLeftOf="@id/check_lateralGap"
+                android:text="@string/literal_gap_intro"
+                app:custom_font="@string/font_dosis_regular" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relative_topgap"
+            style="@style/LayoutOption">
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                android:id="@+id/text_topgap"
+                style="@style/TextOption"
+                android:layout_toLeftOf="@+id/check_topgap"
+                android:layout_toStartOf="@+id/check_topgap"
+                android:text="@string/top_gap"
+                app:custom_font="@string/font_dosis_regular" />
+
+            <CheckBox
+                android:id="@+id/check_topgap"
+                style="@style/CheckOption" />
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                style="@style/TextOptionIntro"
+                android:layout_below="@id/text_topgap"
+                android:layout_toLeftOf="@id/check_topgap"
+                android:text="@string/top_gap_intro"
+                app:custom_font="@string/font_dosis_regular" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp1"
+            android:layout_marginTop="@dimen/dp10"
+            android:background="@color/text_gray" />
+
+        <it.keybeeproject.keybee.view.TextViewCustom
+            style="@style/TextSettingType"
+            android:text="@string/text_settings"
+            app:custom_font="@string/font_dosis_regular" />
+
+        <RelativeLayout
+            android:id="@+id/relative_dotSpace"
+            style="@style/LayoutOption">
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                android:id="@+id/text_dotSpace"
+                style="@style/TextOption"
+                android:layout_toLeftOf="@+id/check_dotSpace"
+                android:layout_toStartOf="@+id/check_dotSpace"
+                android:text="@string/dot_space"
+                app:custom_font="@string/font_dosis_regular" />
+
+            <CheckBox
+                android:id="@+id/check_dotSpace"
+                style="@style/CheckOption" />
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                style="@style/TextOptionIntro"
+                android:layout_below="@id/text_dotSpace"
+                android:layout_toLeftOf="@id/check_dotSpace"
+                android:text="@string/dot_space_intro"
+                app:custom_font="@string/font_dosis_regular" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relative_preview"
+            style="@style/LayoutOption">
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                android:id="@+id/text_preview"
+                style="@style/TextOption"
+                android:layout_toLeftOf="@+id/check_preview"
+                android:layout_toStartOf="@+id/check_preview"
+                android:text="@string/letter_preview"
+                app:custom_font="@string/font_dosis_regular" />
+
+            <CheckBox
+                android:id="@+id/check_preview"
+                style="@style/CheckOption" />
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                style="@style/TextOptionIntro"
+                android:layout_below="@id/text_preview"
+                android:layout_toLeftOf="@id/check_preview"
+                android:text="@string/letter_preview_intro"
+                app:custom_font="@string/font_dosis_regular" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relative_textCorrection"
+            style="@style/LayoutOption"
+            android:visibility="gone"
+            tools:visibility="gone">
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                android:id="@+id/text_textCorrection"
+                style="@style/TextOption"
+                android:layout_toStartOf="@+id/check_textCorrection"
+                android:layout_toLeftOf="@+id/check_textCorrection"
+                android:text="@string/text_suggestion"
+                app:custom_font="@string/font_dosis_regular" />
+
+            <CheckBox
+                android:id="@+id/check_textCorrection"
+                style="@style/CheckOption" />
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                style="@style/TextOptionIntro"
+                android:layout_below="@id/text_textCorrection"
+                android:layout_toLeftOf="@id/check_textCorrection"
+                android:text="@string/text_suggestion_intro"
+                app:custom_font="@string/font_dosis_regular" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relative_dot_apostophe"
+            style="@style/LayoutOption">
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                android:id="@+id/text_dot_apostophe"
+                style="@style/TextOption"
+                android:layout_toLeftOf="@+id/check_dot_apostophe"
+                android:layout_toStartOf="@+id/check_dot_apostophe"
+                android:text="@string/dot_apostrophe"
+                app:custom_font="@string/font_dosis_regular" />
+
+            <CheckBox
+                android:id="@+id/check_dot_apostophe"
+                style="@style/CheckOption" />
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                style="@style/TextOptionIntro"
+                android:layout_below="@id/text_dot_apostophe"
+                android:layout_toLeftOf="@id/check_dot_apostophe"
+                android:text="@string/dot_or_apostorphe_intro"
+                app:custom_font="@string/font_dosis_regular" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relative_textAutoCapitalization"
+            style="@style/LayoutOption">
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                android:id="@+id/text_textAutoCapitalization"
+                style="@style/TextOption"
+                android:layout_toLeftOf="@+id/check_textAutoCapitalization"
+                android:layout_toStartOf="@+id/check_textAutoCapitalization"
+                android:text="@string/text_autoCapitalization"
+                app:custom_font="@string/font_dosis_regular" />
+
+            <CheckBox
+                android:id="@+id/check_textAutoCapitalization"
+                style="@style/CheckOption" />
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                style="@style/TextOptionIntro"
+                android:layout_below="@id/text_textAutoCapitalization"
+                android:layout_toLeftOf="@id/check_textAutoCapitalization"
+                android:text="@string/text_autoCapitalization_intro"
+                app:custom_font="@string/font_dosis_regular" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp1"
+            android:layout_marginTop="@dimen/dp10"
+            android:background="@color/text_gray" />
+
+        <it.keybeeproject.keybee.view.TextViewCustom
+            style="@style/TextSettingType"
+            android:text="@string/feedback_settings"
+            app:custom_font="@string/font_dosis_regular" />
+
+        <RelativeLayout
+            android:id="@+id/relative_sound"
+            style="@style/LayoutOption">
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                android:id="@+id/text_sound"
+                style="@style/TextOption"
+                android:layout_toLeftOf="@+id/check_sound"
+                android:layout_toStartOf="@+id/check_sound"
+                android:text="@string/sound"
+                app:custom_font="@string/font_dosis_regular" />
+
+            <CheckBox
+                android:id="@+id/check_sound"
+                style="@style/CheckOption" />
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                style="@style/TextOptionIntro"
+                android:layout_below="@id/text_sound"
+                android:layout_toLeftOf="@id/check_sound"
+                android:text="@string/sound_intro"
+                app:custom_font="@string/font_dosis_regular" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relative_vibra"
+            style="@style/LayoutOption">
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                android:id="@+id/text_vibra"
+                style="@style/TextOption"
+                android:layout_toLeftOf="@+id/check_vibra"
+                android:layout_toStartOf="@+id/check_vibra"
+                android:text="@string/vibra"
+                app:custom_font="@string/font_dosis_regular" />
+
+            <CheckBox
+                android:id="@+id/check_vibra"
+                style="@style/CheckOption" />
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                style="@style/TextOptionIntro"
+                android:layout_below="@id/text_vibra"
+                android:layout_toLeftOf="@id/check_vibra"
+                android:text="@string/vibra_intro"
+                app:custom_font="@string/font_dosis_regular" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp1"
+            android:layout_marginTop="@dimen/dp10"
+            android:background="@color/text_gray" />
+
+        <it.keybeeproject.keybee.view.TextViewCustom
+            style="@style/TextSettingType"
+            android:text="@string/links"
+            app:custom_font="@string/font_dosis_regular" />
+
+        <LinearLayout
+            android:id="@+id/linear_linkKeybee"
+            style="@style/LayoutOption">
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                style="@style/TextOption"
+                android:text="@string/link_keybee"
+                app:custom_font="@string/font_dosis_regular" />
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                style="@style/TextOptionIntro"
+                android:text="@string/official_website"
+                app:custom_font="@string/font_dosis_regular" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_linkGithub"
+            style="@style/LayoutOption">
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                style="@style/TextOption"
+                android:text="@string/open_source"
+                app:custom_font="@string/font_dosis_regular" />
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                style="@style/TextOptionIntro"
+                android:text="@string/link_github_intro"
+                app:custom_font="@string/font_dosis_regular" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_linkKeybeecontest"
+            style="@style/LayoutOption">
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                style="@style/TextOption"
+                android:text="@string/link_keybee_contest"
+                app:custom_font="@string/font_dosis_regular" />
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                style="@style/TextOptionIntro"
+                android:text="@string/link_keybee_contest_msg"
+                app:custom_font="@string/font_dosis_regular" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_linkFacebook"
+            style="@style/LayoutOption">
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                style="@style/TextOption"
+                android:text="@string/facebook"
+                app:custom_font="@string/font_dosis_regular" />
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                style="@style/TextOptionIntro"
+                android:text="@string/link_facebook_intro"
+                app:custom_font="@string/font_dosis_regular" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_linkTwitter"
+            style="@style/LayoutOption">
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                style="@style/TextOption"
+                android:text="@string/twitter"
+                app:custom_font="@string/font_dosis_regular" />
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                style="@style/TextOptionIntro"
+                android:text="@string/link_twitter_intro"
+                app:custom_font="@string/font_dosis_regular" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_linkLinkedIn"
+            style="@style/LayoutOption">
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                style="@style/TextOption"
+                android:text="@string/linkedin"
+                app:custom_font="@string/font_dosis_regular" />
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                style="@style/TextOptionIntro"
+                android:text="@string/link_linkedin_intro"
+                app:custom_font="@string/font_dosis_regular" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp1"
+            android:layout_marginTop="@dimen/dp10"
+            android:background="@color/text_gray" />
+
+        <it.keybeeproject.keybee.view.TextViewCustom
+            style="@style/TextSettingType"
+            android:text="@string/donate"
+            app:custom_font="@string/font_dosis_regular" />
+
+        <LinearLayout
+            android:id="@+id/linear_donate"
+            style="@style/LayoutOption">
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                style="@style/TextOption"
+                android:text="@string/donate_title"
+                app:custom_font="@string/font_dosis_regular" />
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                style="@style/TextOptionIntro"
+                android:text="@string/donate_intro"
+                app:custom_font="@string/font_dosis_regular" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

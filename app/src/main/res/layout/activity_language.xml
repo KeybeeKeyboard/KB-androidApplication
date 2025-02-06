@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                tools:context="it.keybeeproject.keybee.activity.LanguageActivity">
+
+	<ScrollView android:layout_width="match_parent"
+	            android:layout_height="match_parent"
+	            android:layout_above="@id/text_pageNo">
+
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:paddingBottom="@dimen/dp50"
+			android:paddingTop="@dimen/dp20"
+			android:paddingLeft="@dimen/dp10"
+			android:paddingRight="@dimen/dp10"
+			android:clipToPadding="false"
+			android:clipChildren="false">
+
+			<ImageView
+				android:id="@+id/img_logo"
+			    style="@style/ImageLogo"/>
+
+			<it.keybeeproject.keybee.view.TextViewCustom
+				android:id="@+id/text_instruct"
+				style="@style/TextInstructHome"
+				android:layout_below="@id/img_logo"
+				android:text="@string/msg_instruct_language"
+				app:custom_font="@string/font_dosis_medium"/>
+
+			<it.keybeeproject.keybee.view.ButtonCustom
+				android:id="@+id/button_english"
+				style="@style/Button"
+				android:layout_below="@id/text_instruct"
+				android:layout_marginTop="@dimen/dp50"
+                android:onClick="onClickLanguageLayout"
+				android:text="@string/english"
+                app:custom_font="@string/font_dosis_medium" />
+
+			<it.keybeeproject.keybee.view.ButtonCustom
+				android:id="@+id/button_italian"
+				style="@style/Button"
+				android:onClick="onClickLanguageLayout"
+				android:layout_below="@id/button_english"
+				android:layout_marginTop="@dimen/dp20"
+				android:text="@string/italian"
+				app:custom_font="@string/font_dosis_medium"/>
+
+			<it.keybeeproject.keybee.view.ButtonCustom
+				android:id="@+id/button_spanish"
+				style="@style/Button"
+				android:onClick="onClickLanguageLayout"
+				android:layout_below="@id/button_italian"
+				android:layout_marginTop="@dimen/dp20"
+				android:text="@string/spanish"
+				app:custom_font="@string/font_dosis_medium"/>
+
+			<it.keybeeproject.keybee.view.ButtonCustom
+				android:id="@+id/button_german"
+				style="@style/Button"
+				android:onClick="onClickLanguageLayout"
+				android:layout_below="@id/button_spanish"
+				android:layout_marginTop="@dimen/dp20"
+				android:text="@string/german"
+				app:custom_font="@string/font_dosis_medium"/>
+		</RelativeLayout>
+	</ScrollView>
+
+	<it.keybeeproject.keybee.view.TextViewCustom
+		android:id="@+id/text_pageNo"
+		style="@style/TextPageNo"
+		android:layout_alignParentBottom="true"
+		android:text="@string/p1_5"
+		app:custom_font="@string/font_dosis_medium"/>
+</RelativeLayout>

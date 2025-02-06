@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="it.keybeeproject.keybee.activity.TutorialActivity">
+
+    <!--<VideoView
+        android:id="@+id/video_tutorial"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"/>-->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/text_pageNo">
+
+        <RelativeLayout
+            android:id="@+id/relative_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:paddingBottom="@dimen/dp50">
+
+            <ImageView
+                android:id="@+id/img_logo"
+                style="@style/ImageLogo" />
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                android:id="@+id/text_instruct"
+                style="@style/TextInstructHome"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/img_logo"
+                android:text="@string/msg_tutorial"
+                app:custom_font="@string/font_dosis_medium" />
+
+
+            <it.keybeeproject.keybee.view.ButtonCustom
+                android:id="@+id/button_ok"
+                style="@style/Button"
+                android:layout_width="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:background="@color/transparent"
+                android:onClick="onClickOk"
+                android:text="@string/ok"
+                app:custom_font="@string/font_dosis_medium" />
+
+            <TextureView
+                android:id="@+id/texture_tutorial"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp200"
+                android:layout_below="@id/text_instruct"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="8dp" />
+
+
+            <ProgressBar
+                android:id="@+id/progress_tutorial"
+                style="@android:style/Widget.ProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/texture_tutorial"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="@dimen/dp50" />
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <it.keybeeproject.keybee.view.TextViewCustom
+        android:id="@+id/text_pageNo"
+        style="@style/TextPageNo"
+        android:layout_alignParentBottom="true"
+        android:text="@string/p4_5"
+        android:visibility="gone"
+        app:custom_font="@string/font_dosis_medium" />
+</RelativeLayout>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!-- German -->
+	<string name="app_name">Keybee Keyboard</string>
+
+	<string name="msg_enable_keybee">Aktiviere Keybee Keyboard und lege es als standardtastatur fest</string>
+	<string name="button1_enable_keybee">1. aktiviere Keybee Keyboard</string>
+	<string name="button2_choose_keybee">2. wähle Keybee Keyboard</string>
+	<string name="msg_already_enabled">Keybee Keyboard ist bereits aktiviert</string>
+	<string name="msg_select_theme">Super, Keybee Keyboard ist aktiviert.\nWähle jetzt bitte eine theme</string>
+	<string name="msg_tutorial">Mit Keybee Keyboard kannst du twipen:\ntippe und wische über angrenzende buchstaben</string>
+	<string name="msg_enjoy">Genieße die neue Art des Tippens.\nFür umme. Für immer.</string>
+	<string name="more_themes">mehr themen...</string>
+
+	<string name="msg_purchase_finish">Vielen Dank für Ihren Kauf!</string>
+	<string name="CANCEL">ABBRECHEN</string>
+	<string name="cancel">ABBRECHEN</string>
+	<string name="use">BENUTZEN</string>
+	<string name="purchased">GEKAUFT</string>
+	<string name="buy">KAUFEN</string>
+	<string name="free">KOSTENLOS</string>
+	<string name="theme_info">Tippen Sie auf das Design, um Ihr Lieblingsdesign anzuzeigen und zu verwenden.</string>
+	<string name="theme_info_OLD">Tippen Sie auf das theme, um es anzuschauen, zu benutzen oder um ihren Favoriten zu kaufen. Ein theme kostet, wie ein Kaffee in Italien, nur 1 €.\n\nFalls Sie ein theme von einem anderen Gerät aus erworben haben, installieren Sie für die Synchronisation Keybee Keyboard bitte noch einmal, um ihr erworbenes theme benutzen zu können.</string>
+	<string name="layout_info">Trage die gewünschten Buchstaben in die rechte Spalte ein um das Layout anzupassen.\n\nUm das Pop-Up zu verändern, drücke auf den unterstrichenen Buchstaben in der linken Spalte und ordne dann die Sonderzeichen mit den Pfeiltasten nach belieben neu an.</string>
+	<string name="layout_info_OLD">Trage die gewünschten Buchstaben in die rechte Spalte ein um das Layout anzupassen.\n\nBenutzerdefinierte Layouts sind nur mit Abonement verfügbar.\n\nUm das Pop-Up zu verändern, drücke auf den unterstrichenen Buchstaben in der linken Spalte und ordne dann die Sonderzeichen mit den Pfeiltasten nach belieben neu an.\n\nFrei gestaltbare Pop-Ups sind auch ohne Abonement verfügbar.</string>
+	<string name="message_free_subscription">Mit Keybee Keyboard Abonement (Keybee Keyboard subscription):\n\nDu erhälst kompletten Zugang zu allen aktuellen und zukünftigen Keybee Keyboard Themen. Du kannst jederzeit nach belieben zwischen verschiedenen Themen wechseln, ohne dafür nochmals zu bezahlen. \n\nGestalte individuelle Layouts indem du die Buchstaben neu auf der Tastatur anordnest.\n\nDu hilfst mit, die Qualität von Keybee Keyboard durch neue Features, neue Layouts, neue Themen und häufigere Updates zu verbessern. Wenn du uns unterstützen möchtest ist ein Abonement der richtige Weg.\n\nWichtiger Hinweis: Du findest den Status deines Abonements und die Möglichkeit zu Kündigen unter Meine Apps im Play Store.\n\nVielen Danke.\n</string>
+	<string name="subscribe">Abonnieren</string>
+	<string name="reset">RESET</string>
+	<string name="CUSTOMIZE" >ANPASSEN</string>
+
+</resources>

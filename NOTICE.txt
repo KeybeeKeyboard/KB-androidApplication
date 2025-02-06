@@ -1,0 +1,14 @@
+NOTICE:
+
+I choose to give a permissive license because is the best way to improve and spread the new layout. 
+The only request I have is to keep the name of the layout Keybee Keyboard, the same as we used to call Qwerty Keyboard so that we have a strong legacy for the future.
+
+Please note that the usability and design pillars of Keybee Keyboard layout are made to maximize the efficiency of typing and swiping with one finger. Before altering the layout use common sense and read the related patent documentation (WO2014111963A3 and EP2946267A2) which can be recap with these three points:
+
+1) Hexagonal key structure which means that each key is connected to SIX other keys. Not less. Not more.
+2) The space key MUST be in the center of the Keybee Keyboard layout.
+3) The most frequent bi-grams, tri-grams or n-grams are linked between the keys.
+
+Thank you and have fun!
+
+© 2014 KeybeeKeyboard.com - Marco Papalia. All rights reserved.

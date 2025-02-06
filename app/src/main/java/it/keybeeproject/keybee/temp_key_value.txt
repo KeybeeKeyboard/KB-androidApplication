@@ -1,0 +1,41 @@
+Language English
+=================
+1
+b0      q	q	z	q	2	$
+3
+d0      w	h	h	h	+	±
+5
+f0      c	w	k	w	/	¡
+7
+a0      j	k	q	g	1	ª
+b1      f	d	g	r	5	•
+c0      u	u	u	u	3	®
+d1      h	i	i	i	*	~
+e0      i	c	c	c	<	«
+f1      n	f	l	v	-	¿
+g0      k	j	j	k	>	»
+a1      z	v	y	b	4	{
+b2      r	r	r	l	8	°
+c1      o	e	n	o	6	}
+d2      space	space	space	space	space	space
+e1      t	l	s	y	(	[
+f2      y	g	t	d	:	\
+g1      g	y	f	j	)	]
+a2      b	b	p	f	7	§
+b3      p	p	b	p	0	=
+c2      e	a	e	a	9	ç
+d3      a	t	d	s	.	;
+e2      s	o	a	e	@	¶
+f3      m	m	o	n	"	^
+g2      v	z	v	z	_	|
+a3      x	x	x	x	€	%
+b4      SHIFT	SHIFT	SHIFT	SHIFT	sym	123
+c3      l	s	m	m	!	#
+d4      123	123	123	123	ABC	ABC
+e3      d	n	w	t	?	&
+f4      del	del	del	del	del	del
+g3      '	'	'	'	,	…
+36
+37
+38
+39

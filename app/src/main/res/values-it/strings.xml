@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Italian -->
+    <string name="app_name">Keybee Keyboard</string>
+
+    <string name="msg_enable_keybee">Abilita Keybee Keyboard e impostala come tastiera predefinita</string>
+    <string name="button1_enable_keybee">1. abilita Keybee Keyboard</string>
+    <string name="button2_choose_keybee">2. scegli Keybee Keyboard</string>
+    <string name="msg_already_enabled">Keybee Keyboard è già abilitata</string>
+    <string name="msg_select_theme">Fantastico, Keybee Keyboard è impostata.\nAdesso scegli un tema:</string>
+    <string name="msg_tutorial">Keybee Keyboard introduce il twipe:\ntocco e swipe sulle lettere adiacenti</string>
+    <string name="msg_enjoy">Goditi il nuovo modo di digitare.\nGratis. Per sempre.</string>
+    <string name="more_themes">più temi...</string>
+
+    <string name="msg_purchase_finish">Grazie per l\'acquisto!</string>
+    <string name="CANCEL">ANNULLA</string>
+    <string name="cancel">ANNULLA</string>
+    <string name="use">USA</string>
+    <string name="purchased">ACQUISTATO</string>
+    <string name="buy">COMPRA</string>
+    <string name="free">GRATIS</string>
+    <string name="theme_info">Premi sul tema per vedere e usare il tuo preferito.</string>
+    <string name="theme_info_OLD">Premi sul tema per vedere, usare o comprare il tuo preferito. Un tema costa solo 1€ come un caffè in Italia.\n\nSe hai acquistato un tema da un dispositivo differente, per piacere reinstalla Keybee Keyboard per sincronizzare ed utilizzare il tema acquistato.</string>
+    <string name="layout_info">Per personalizzare il tuo layout seleziona la lettera desiderata nella colonna di destra.\n\nPer personalizzare il pop-up premi la lettera sottolineata nella colonna di sinistra e riordina successivamente le lettere speciali usando le frecce su e giù.</string>
+    <string name="layout_info_OLD">Per personalizzare il tuo layout seleziona la lettera desiderata nella colonna di destra.\n\nIl layout personalizzato funziona solo con l\'abbonamento Keybee Keyboard (Keybee Keyboard subscription).\n\nPer personalizzare il pop-up premi la lettera sottolineata nella colonna di sinistra e riordina successivamente le lettere speciali usando le frecce su e giù.\n\nIl pop-up personalizzato è disponibile gratuitamente senza l\'abbonamento Keybee Keyboard.</string>
+    <string name="message_free_subscription">Con l\'abbonamento Keybee Keyboard (Keybee Keyboard subscription):\n\nAvrai libero accesso a tutti i temi attuali e futuri di Keybee Keyboard. Potrai quindi usarli e scambiarli tutti in ogni momento senza doverli più acquistarli singolarmente. \n\nPotrai personalizzare il tuo layout spostando a piacimento le lettere della tastiera principale.\n\nPotrai migliorare la qualità del progetto Keybee Keyboard con nuove feature, nuovi layout, nuovi temi e con aggiornamenti più frequenti. Quindi, se vuoi anche sostenerci, questa sottoscrizione è il modo ideale per rendere Keybee ancora migliore.\n\nNota importante: Puoi controllare lo stato del tuo abbonamento e cancellarlo se necessario dal menu Le mie App sulla Google Play Store app.\n\nGrazie! \n</string>
+    <string name="subscribe">SOTTOSCRIVI</string>
+    <string name="reset">RESET</string>
+    <string name="CUSTOMIZE" >PERSONALIZZA</string>
+
+</resources>

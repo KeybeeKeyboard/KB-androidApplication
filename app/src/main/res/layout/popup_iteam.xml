@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:paddingLeft="@dimen/dp30"
+    android:paddingRight="@dimen/dp30"
+    android:paddingTop="@dimen/dp5"
+    android:paddingBottom="@dimen/dp5">
+
+    <ImageView
+        android:id="@+id/up"
+        android:rotation="-90"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_next"/>
+
+<it.keybeeproject.keybee.view.TextViewCustom
+    android:id="@+id/text1"
+    android:layout_width="0dp"
+    android:layout_weight="1"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/sp16"
+    android:padding="@dimen/dp3"
+    android:text="@string/A"
+    android:gravity="center"
+    android:textColor="@color/black"
+    app:custom_font="@string/font_dosis_regular" />
+
+    <ImageView
+        android:id="@+id/down"
+        android:rotation="90"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_next"/>
+</LinearLayout>
+

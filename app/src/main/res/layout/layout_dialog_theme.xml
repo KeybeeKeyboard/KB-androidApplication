@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent">
+
+    <it.keybeeproject.keybee.view.TextViewCustom
+        android:id="@+id/text_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/dp10"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp21"
+        app:custom_font="@string/font_dosis_regular" />
+
+    <ImageView
+        android:id="@+id/img_themeThumbnail"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp200"
+        android:layout_below="@id/text_title"
+        android:layout_marginBottom="@dimen/dp5" />
+
+    <it.keybeeproject.keybee.view.TextViewCustom
+        android:id="@+id/text_price"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp50"
+        android:layout_below="@id/img_themeThumbnail"
+        android:layout_marginLeft="@dimen/dp15"
+        android:gravity="center"
+        android:padding="@dimen/dp10"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp14"
+        app:custom_font="@string/font_dosis_bold" />
+
+    <it.keybeeproject.keybee.view.ButtonCustom
+        android:id="@+id/button_cancel"
+        style="?android:borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img_themeThumbnail"
+        android:layout_toLeftOf="@+id/button_use"
+        android:text="@string/CANCEL"
+        android:textAllCaps="true"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/sp14" />
+
+    <it.keybeeproject.keybee.view.ButtonCustom
+        android:id="@+id/button_use"
+        style="?android:borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/img_themeThumbnail"
+        android:layout_marginRight="@dimen/dp10"
+        android:text="@string/use"
+        android:textAllCaps="true"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/sp14" />
+</RelativeLayout>

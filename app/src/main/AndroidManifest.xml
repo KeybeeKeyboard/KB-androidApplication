@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application
+        android:name=".KeybeeApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+
+        <activity
+            android:name=".activity.LanguageActivity"
+            android:exported="true"
+            android:theme="@style/AppThemeNoActionbar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.EnableActivity"
+            android:theme="@style/AppThemeNoActionbar">
+        </activity>
+        <activity
+            android:name=".activity.ThemeActivity"
+            android:theme="@style/AppThemeNoActionbar">
+        </activity>
+        <activity
+            android:name=".activity.CustomLayoutActivity"
+            android:label="@string/custom_layout">
+        </activity>
+        <activity
+            android:name=".activity.TutorialActivity"
+            android:theme="@style/AppThemeNoActionbar">
+        </activity>
+        <activity
+            android:name=".activity.EnjoyActivity"
+            android:theme="@style/AppThemeNoActionbar">
+        </activity>
+        <activity
+            android:name=".activity.SettingsActivity"
+            android:launchMode="singleInstance">
+        </activity>
+        <activity
+            android:name=".activity.ProjectInfoActivity"
+            android:label="@string/discover_new_way">
+        </activity>
+        <activity
+            android:name=".activity.ThemeMarketActivity"
+            android:label="@string/keybee_theme_market">
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" /> <!-- Add the following meta-data for devices running Google Play service. -->
+        <service
+            android:name=".service.KeyboardService"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:permission="android.permission.BIND_INPUT_METHOD">
+            <intent-filter>
+                <action android:name="android.view.InputMethod" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.view.im"
+                android:resource="@xml/method" />
+        </service>
+    </application>
+
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+</manifest>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:orientation="vertical"
+	android:padding="@dimen/dp10"
+	android:gravity="center">
+
+	<it.keybeeproject.keybee.view.TextViewCustom
+		android:id="@+id/text_size"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:gravity="center"
+		android:padding="@dimen/dp10"
+		android:textSize="@dimen/sp16"
+		android:textColor="@color/black"
+		app:custom_font="@string/font_dosis_regular"/>
+
+	<SeekBar
+		android:id="@+id/seek_size"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:max="5"/>
+</LinearLayout>

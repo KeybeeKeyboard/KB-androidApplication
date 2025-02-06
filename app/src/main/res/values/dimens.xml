@@ -1,0 +1,20 @@
+<resources>
+	<!-- Default screen margins, per the Android Design guidelines. -->
+	<dimen name="activity_horizontal_margin">16dp</dimen>
+	<dimen name="activity_vertical_margin">16dp</dimen>
+
+	<bool name="isTablet">false</bool>
+
+	<dimen name="button_size">@dimen/dp150</dimen>
+	<dimen name="button_width">@dimen/dp50</dimen>
+	<dimen name="button_height">@dimen/dp43</dimen>
+	<dimen name="button_height_half">@dimen/dp21_5</dimen>
+	<dimen name="button_text">@dimen/sp25</dimen>
+	<dimen name="button_margin_left">@dimen/dp39</dimen>
+	<dimen name="button_margin_top">@dimen/dp1</dimen>
+	<dimen name="keyboard_height">@dimen/dp226</dimen>
+	<dimen name="text_settings_title">@dimen/sp20</dimen>
+	<dimen name="settings_spacing">@dimen/dp20</dimen>
+	<dimen name="settings_option_spacing">@dimen/dp10</dimen>
+	<dimen name="popup_stroke">@dimen/dp1</dimen>
+</resources>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/dp10"
+    android:paddingBottom="@dimen/dp5"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <it.keybeeproject.keybee.view.TextViewCustom
+        android:id="@+id/main_txt"
+        style="@style/TextInstructHome"
+        android:gravity="center"
+        android:text="@string/popup"
+        android:layout_marginBottom="@dimen/dp10"
+        app:custom_font="@string/font_dosis_medium" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@id/main_txt"
+        android:id="@+id/popup_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_below="@id/popup_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/dp10"
+        >
+        <it.keybeeproject.keybee.view.ButtonCustom
+            android:id="@+id/reset"
+            style="?android:borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/reset"
+            android:gravity="center"
+            android:layout_marginRight="@dimen/dp40"
+            android:textAllCaps="true"
+            android:textSize="@dimen/sp14"
+            android:textColor="@color/colorAccent"
+            android:layout_weight="1"
+            />
+
+
+        <it.keybeeproject.keybee.view.ButtonCustom
+            android:id="@+id/ok"
+            style="?android:borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ok"
+            android:layout_marginLeft="@dimen/dp40"
+            android:textSize="@dimen/sp14"
+            android:gravity="center"
+            android:textAllCaps="true"
+            android:textColor="@color/colorAccent"
+            android:layout_weight="1"
+            />
+    </LinearLayout>
+
+</RelativeLayout>

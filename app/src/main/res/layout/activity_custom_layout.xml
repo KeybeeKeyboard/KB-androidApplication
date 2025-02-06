@@ -1,0 +1,1690 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="it.keybeeproject.keybee.activity.CustomLayoutActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/dp20">
+
+                <it.keybeeproject.keybee.view.TextViewCustom
+                    android:id="@+id/main_txt"
+                    style="@style/TextInstructHome"
+                    android:layout_marginLeft="@dimen/dp60"
+                    android:layout_marginBottom="@dimen/dp10"
+                    android:gravity="start"
+                    android:text="@string/english"
+                    app:custom_font="@string/font_dosis_medium" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp5">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <it.keybeeproject.keybee.view.TextViewCustom
+                        android:id="@+id/Text_A0"
+                        style="@style/TextAplhabet"
+                        android:text="@string/J"
+                        app:custom_font="@string/font_dosis_regular" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        style="@style/ArrowImage"
+                        android:src="@drawable/ic_next" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <Spinner
+                        android:id="@+id/Spin_A0"
+                        style="@style/spinner"
+                        />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp5">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <it.keybeeproject.keybee.view.TextViewCustom
+                        android:id="@+id/Text_A1"
+                        style="@style/TextAplhabet"
+                        android:text="@string/Z"
+                        app:custom_font="@string/font_dosis_regular" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        style="@style/ArrowImage"
+                        android:src="@drawable/ic_next" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <Spinner
+                        android:id="@+id/Spin_A1"
+                        style="@style/spinner" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp5">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <it.keybeeproject.keybee.view.TextViewCustom
+                        android:id="@+id/Text_A2"
+                        style="@style/TextAplhabet"
+                        android:text="@string/B"
+                        app:custom_font="@string/font_dosis_regular" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        style="@style/ArrowImage"
+                        android:src="@drawable/ic_next" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <Spinner
+                        android:id="@+id/Spin_A2"
+                        style="@style/spinner" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp5">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <it.keybeeproject.keybee.view.TextViewCustom
+                        android:id="@+id/Text_A3"
+                        style="@style/TextAplhabet"
+                        android:text="@string/X"
+                        app:custom_font="@string/font_dosis_regular" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        style="@style/ArrowImage"
+                        android:src="@drawable/ic_next" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <Spinner
+                        android:id="@+id/Spin_A3"
+                        style="@style/spinner" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp5">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <it.keybeeproject.keybee.view.TextViewCustom
+                        android:id="@+id/Text_B0"
+                        style="@style/TextAplhabet"
+                        android:text="@string/Q"
+                        app:custom_font="@string/font_dosis_regular" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        style="@style/ArrowImage"
+                        android:src="@drawable/ic_next" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <Spinner
+                        android:id="@+id/Spin_B0"
+                        style="@style/spinner" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp5">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <it.keybeeproject.keybee.view.TextViewCustom
+                        android:id="@+id/Text_B1"
+                        style="@style/TextAplhabet"
+                        android:text="@string/F"
+                        app:custom_font="@string/font_dosis_regular" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        style="@style/ArrowImage"
+                        android:src="@drawable/ic_next" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <Spinner
+                        android:id="@+id/SPin_B1"
+                        style="@style/spinner" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp5">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <it.keybeeproject.keybee.view.TextViewCustom
+                        android:id="@+id/Text_B2"
+                        style="@style/TextAplhabet"
+                        android:text="@string/R"
+                        app:custom_font="@string/font_dosis_regular" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        style="@style/ArrowImage"
+                        android:src="@drawable/ic_next" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <Spinner
+                        android:id="@+id/Spin_B2"
+                        style="@style/spinner" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp5">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <it.keybeeproject.keybee.view.TextViewCustom
+                        android:id="@+id/Text_B3"
+                        style="@style/TextAplhabet"
+                        android:text="@string/P"
+                        app:custom_font="@string/font_dosis_regular" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        style="@style/ArrowImage"
+                        android:src="@drawable/ic_next" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <Spinner
+                        android:id="@+id/Spin_B3"
+                        style="@style/spinner" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp5">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <it.keybeeproject.keybee.view.TextViewCustom
+                        android:id="@+id/Text_C0"
+                        style="@style/TextAplhabet"
+                        android:text="@string/U"
+                        app:custom_font="@string/font_dosis_regular" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        style="@style/ArrowImage"
+                        android:src="@drawable/ic_next" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <Spinner
+                        android:id="@+id/Spin_C0"
+                        style="@style/spinner" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp5">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <it.keybeeproject.keybee.view.TextViewCustom
+                        android:id="@+id/Text_C1"
+                        style="@style/TextAplhabet"
+                        android:text="@string/O"
+                        app:custom_font="@string/font_dosis_regular" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        style="@style/ArrowImage"
+                        android:src="@drawable/ic_next" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <Spinner
+                        android:id="@+id/Spin_C1"
+                        style="@style/spinner" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp5">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <it.keybeeproject.keybee.view.TextViewCustom
+                        android:id="@+id/Text_C2"
+                        style="@style/TextAplhabet"
+                        android:text="@string/E"
+                        app:custom_font="@string/font_dosis_regular" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        style="@style/ArrowImage"
+                        android:src="@drawable/ic_next" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <Spinner
+                        android:id="@+id/Spin_C2"
+                        style="@style/spinner" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp5">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <it.keybeeproject.keybee.view.TextViewCustom
+                        android:id="@+id/Text_C3"
+                        style="@style/TextAplhabet"
+                        android:text="@string/I"
+                        app:custom_font="@string/font_dosis_regular" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        style="@style/ArrowImage"
+                        android:src="@drawable/ic_next" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <Spinner
+                        android:id="@+id/Spin_C3"
+                        style="@style/spinner" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp5">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <it.keybeeproject.keybee.view.TextViewCustom
+                        android:id="@+id/Text_D0"
+                        style="@style/TextAplhabet"
+                        android:text="@string/W"
+                        app:custom_font="@string/font_dosis_regular" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        style="@style/ArrowImage"
+                        android:src="@drawable/ic_next" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <Spinner
+                        android:id="@+id/Spin_D0"
+                        style="@style/spinner" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp5">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <it.keybeeproject.keybee.view.TextViewCustom
+                        android:id="@+id/Text_D1"
+                        style="@style/TextAplhabet"
+                        android:text="@string/H"
+                        app:custom_font="@string/font_dosis_regular" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        style="@style/ArrowImage"
+                        android:src="@drawable/ic_next" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <Spinner
+                        android:id="@+id/Spin_D1"
+                        style="@style/spinner" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp5">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <it.keybeeproject.keybee.view.TextViewCustom
+                        android:id="@+id/Text_D3"
+                        style="@style/TextAplhabet"
+                        android:text="@string/A"
+                        app:custom_font="@string/font_dosis_regular" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        style="@style/ArrowImage"
+                        android:src="@drawable/ic_next" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <Spinner
+                        android:id="@+id/Spin_D3"
+                        style="@style/spinner" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp5">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <it.keybeeproject.keybee.view.TextViewCustom
+                        android:id="@+id/Text_E0"
+                        style="@style/TextAplhabet"
+                        android:text="@string/I"
+                        app:custom_font="@string/font_dosis_regular" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        style="@style/ArrowImage"
+                        android:src="@drawable/ic_next" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <Spinner
+                        android:id="@+id/Spin_E0"
+                        style="@style/spinner" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp5">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <it.keybeeproject.keybee.view.TextViewCustom
+                        android:id="@+id/Text_E1"
+                        style="@style/TextAplhabet"
+                        android:text="@string/T"
+                        app:custom_font="@string/font_dosis_regular" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        style="@style/ArrowImage"
+                        android:src="@drawable/ic_next" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <Spinner
+                        android:id="@+id/Spin_E1"
+                        style="@style/spinner" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp5">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <it.keybeeproject.keybee.view.TextViewCustom
+                        android:id="@+id/Text_E2"
+                        style="@style/TextAplhabet"
+                        android:text="@string/S"
+                        app:custom_font="@string/font_dosis_regular" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        style="@style/ArrowImage"
+                        android:src="@drawable/ic_next" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <Spinner
+                        android:id="@+id/Spin_E2"
+                        style="@style/spinner" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp5">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <it.keybeeproject.keybee.view.TextViewCustom
+                        android:id="@+id/Text_E3"
+                        style="@style/TextAplhabet"
+                        android:text="@string/D"
+                        app:custom_font="@string/font_dosis_regular" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        style="@style/ArrowImage"
+                        android:src="@drawable/ic_next" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <Spinner
+                        android:id="@+id/Spin_E3"
+                        style="@style/spinner" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp5">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <it.keybeeproject.keybee.view.TextViewCustom
+                        android:id="@+id/Text_F0"
+                        style="@style/TextAplhabet"
+                        android:text="@string/C"
+                        app:custom_font="@string/font_dosis_regular" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        style="@style/ArrowImage"
+                        android:src="@drawable/ic_next" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <Spinner
+                        android:id="@+id/Spin_F0"
+                        style="@style/spinner" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp5">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <it.keybeeproject.keybee.view.TextViewCustom
+                       android:id="@+id/Text_F1"
+                        style="@style/TextAplhabet"
+                        android:text="@string/N"
+                        app:custom_font="@string/font_dosis_regular" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        style="@style/ArrowImage"
+                        android:src="@drawable/ic_next" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <Spinner
+                        android:id="@+id/Spin_F1"
+                        style="@style/spinner" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp5">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <it.keybeeproject.keybee.view.TextViewCustom
+                        android:id="@+id/Text_F2"
+                        style="@style/TextAplhabet"
+                        android:text="@string/Y"
+                        app:custom_font="@string/font_dosis_regular" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        style="@style/ArrowImage"
+                        android:src="@drawable/ic_next" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <Spinner
+                        android:id="@+id/Spin_F2"
+                        style="@style/spinner" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp5">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <it.keybeeproject.keybee.view.TextViewCustom
+                        android:id="@+id/Text_F3"
+                        style="@style/TextAplhabet"
+                        android:text="@string/M"
+                        app:custom_font="@string/font_dosis_regular" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        style="@style/ArrowImage"
+                        android:src="@drawable/ic_next" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <Spinner
+                        android:id="@+id/Spin_F3"
+                        style="@style/spinner" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp5">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <it.keybeeproject.keybee.view.TextViewCustom
+                        android:id="@+id/Text_G0"
+                        style="@style/TextAplhabet"
+                        android:text="@string/K"
+                        app:custom_font="@string/font_dosis_regular" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        style="@style/ArrowImage"
+                        android:src="@drawable/ic_next" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <Spinner
+                        android:id="@+id/Spin_G0"
+                        style="@style/spinner" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp5">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <it.keybeeproject.keybee.view.TextViewCustom
+                        android:id="@+id/Text_G1"
+                        style="@style/TextAplhabet"
+                        android:text="@string/G"
+                        app:custom_font="@string/font_dosis_regular" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        style="@style/ArrowImage"
+                        android:src="@drawable/ic_next" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <Spinner
+                        android:id="@+id/Spin_G1"
+                        style="@style/spinner" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp5">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <it.keybeeproject.keybee.view.TextViewCustom
+                        android:id="@+id/Text_G2"
+                        style="@style/TextAplhabet"
+                        android:text="@string/V"
+                        app:custom_font="@string/font_dosis_regular" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        style="@style/ArrowImage"
+                        android:src="@drawable/ic_next" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <Spinner
+                        android:id="@+id/Spin_G2"
+                        style="@style/spinner" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <it.keybeeproject.keybee.view.ButtonCustom
+                    android:id="@+id/reset"
+                    style="?android:borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/reset"
+                    android:gravity="center"
+                    android:layout_marginRight="@dimen/dp40"
+                    android:textAllCaps="true"
+                    android:textSize="@dimen/sp14"
+                    android:textColor="@color/colorAccent"
+                    android:layout_weight="1"
+                     />
+
+
+                <it.keybeeproject.keybee.view.ButtonCustom
+                    android:id="@+id/subscribe"
+                    style="?android:borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/subscribe"
+                    android:layout_marginLeft="@dimen/dp40"
+                    android:textSize="@dimen/sp14"
+                    android:gravity="center"
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorAccent"
+                    android:layout_weight="1"
+                     />
+
+            </LinearLayout>
+            <!--  <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:orientation="horizontal"
+                  android:visibility="gone">
+
+                  <LinearLayout
+                      android:layout_width="0dp"
+                      android:layout_height="match_parent"
+                      android:layout_weight="1"
+                      android:gravity="center"
+                      android:orientation="vertical"
+                      android:visibility="gone">
+
+                      <it.keybeeproject.keybee.view.TextViewCustom
+                          style="@style/TextAplhabet"
+                          android:text="@string/J"
+                          app:custom_font="@string/font_dosis_regular" />
+
+                      <it.keybeeproject.keybee.view.TextViewCustom
+                          style="@style/TextAplhabet"
+                          android:text="@string/Z"
+                          app:custom_font="@string/font_dosis_regular" />
+
+                      <it.keybeeproject.keybee.view.TextViewCustom
+                          style="@style/TextAplhabet"
+                          android:text="@string/B"
+                          app:custom_font="@string/font_dosis_regular" />
+
+                      <it.keybeeproject.keybee.view.TextViewCustom
+                          style="@style/TextAplhabet"
+                          android:text="X"
+                          app:custom_font="@string/font_dosis_regular" />
+
+                      <it.keybeeproject.keybee.view.TextViewCustom
+                          style="@style/TextAplhabet"
+                          android:text="@string/Q"
+                          app:custom_font="@string/font_dosis_regular" />
+
+                      <it.keybeeproject.keybee.view.TextViewCustom
+                          style="@style/TextAplhabet"
+                          android:text="@string/F"
+                          app:custom_font="@string/font_dosis_regular" />
+
+                      <it.keybeeproject.keybee.view.TextViewCustom
+                          style="@style/TextAplhabet"
+                          android:text="@string/R"
+                          app:custom_font="@string/font_dosis_regular" />
+
+                      <it.keybeeproject.keybee.view.TextViewCustom
+                          style="@style/TextAplhabet"
+                          android:text="@string/P"
+                          app:custom_font="@string/font_dosis_regular" />
+
+                      <it.keybeeproject.keybee.view.TextViewCustom
+                          style="@style/TextAplhabet"
+                          android:text="@string/U"
+                          app:custom_font="@string/font_dosis_regular" />
+
+                      <it.keybeeproject.keybee.view.TextViewCustom
+                          style="@style/TextAplhabet"
+                          android:text="@string/E"
+                          app:custom_font="@string/font_dosis_regular" />
+
+                      <it.keybeeproject.keybee.view.TextViewCustom
+                          style="@style/TextAplhabet"
+                          android:text="@string/I"
+                          app:custom_font="@string/font_dosis_regular" />
+
+                      <it.keybeeproject.keybee.view.TextViewCustom
+                          style="@style/TextAplhabet"
+                          android:text="@string/W"
+                          app:custom_font="@string/font_dosis_regular" />
+
+                      <it.keybeeproject.keybee.view.TextViewCustom
+                          style="@style/TextAplhabet"
+                          android:text="@string/H"
+                          app:custom_font="@string/font_dosis_regular" />
+
+                      <it.keybeeproject.keybee.view.TextViewCustom
+                          style="@style/TextAplhabet"
+                          android:text="@string/A"
+                          app:custom_font="@string/font_dosis_regular" />
+
+                      <it.keybeeproject.keybee.view.TextViewCustom
+                          style="@style/TextAplhabet"
+                          android:text="@string/I"
+                          app:custom_font="@string/font_dosis_regular" />
+
+                      <it.keybeeproject.keybee.view.TextViewCustom
+                          style="@style/TextAplhabet"
+                          android:text="@string/T"
+                          app:custom_font="@string/font_dosis_regular" />
+
+                      <it.keybeeproject.keybee.view.TextViewCustom
+                          style="@style/TextAplhabet"
+                          android:text="@string/S"
+                          app:custom_font="@string/font_dosis_regular" />
+
+                      <it.keybeeproject.keybee.view.TextViewCustom
+                          style="@style/TextAplhabet"
+                          android:text="@string/D"
+                          app:custom_font="@string/font_dosis_regular" />
+
+                      <it.keybeeproject.keybee.view.TextViewCustom
+                          style="@style/TextAplhabet"
+                          android:text="@string/C"
+                          app:custom_font="@string/font_dosis_regular" />
+
+                      <it.keybeeproject.keybee.view.TextViewCustom
+                          style="@style/TextAplhabet"
+                          android:text="@string/N"
+                          app:custom_font="@string/font_dosis_regular" />
+
+                      <it.keybeeproject.keybee.view.TextViewCustom
+                          style="@style/TextAplhabet"
+                          android:text="@string/Y"
+                          app:custom_font="@string/font_dosis_regular" />
+
+                      <it.keybeeproject.keybee.view.TextViewCustom
+                          style="@style/TextAplhabet"
+                          android:text="@string/M"
+                          app:custom_font="@string/font_dosis_regular" />
+
+                      <it.keybeeproject.keybee.view.TextViewCustom
+                          style="@style/TextAplhabet"
+                          android:text="@string/K"
+                          app:custom_font="@string/font_dosis_regular" />
+
+                      <it.keybeeproject.keybee.view.TextViewCustom
+                          style="@style/TextAplhabet"
+                          android:text="@string/G"
+                          app:custom_font="@string/font_dosis_regular" />
+
+                      <it.keybeeproject.keybee.view.TextViewCustom
+                          style="@style/TextAplhabet"
+                          android:text="@string/V"
+                          app:custom_font="@string/font_dosis_regular" />
+
+                      <it.keybeeproject.keybee.view.TextViewCustom
+                          style="@style/TextAplhabet"
+                          android:text="@string/M"
+                          app:custom_font="@string/font_dosis_regular" />
+
+
+                  </LinearLayout>
+
+                  <LinearLayout
+                      android:layout_width="0dp"
+                      android:layout_height="match_parent"
+                      android:layout_weight="1"
+                      android:gravity="center"
+                      android:orientation="vertical"
+                      android:visibility="gone">
+
+
+                      <ImageView
+                          style="@style/ArrowImage"
+                          android:src="@drawable/ic_next" />
+
+                      <ImageView
+                          style="@style/ArrowImage"
+                          android:src="@drawable/ic_next" />
+
+                      <ImageView
+                          style="@style/ArrowImage"
+                          android:src="@drawable/ic_next" />
+
+                      <ImageView
+                          style="@style/ArrowImage"
+                          android:src="@drawable/ic_next" />
+
+                      <ImageView
+                          style="@style/ArrowImage"
+                          android:src="@drawable/ic_next" />
+
+                      <ImageView
+                          style="@style/ArrowImage"
+                          android:src="@drawable/ic_next" />
+
+                      <ImageView
+                          style="@style/ArrowImage"
+                          android:src="@drawable/ic_next" />
+
+                      <ImageView
+                          style="@style/ArrowImage"
+                          android:src="@drawable/ic_next" />
+
+                      <ImageView
+                          style="@style/ArrowImage"
+                          android:src="@drawable/ic_next" />
+
+                      <ImageView
+                          style="@style/ArrowImage"
+                          android:src="@drawable/ic_next" />
+
+                      <ImageView
+                          style="@style/ArrowImage"
+                          android:src="@drawable/ic_next" />
+
+                      <ImageView
+                          style="@style/ArrowImage"
+                          android:src="@drawable/ic_next" />
+
+                      <ImageView
+                          style="@style/ArrowImage"
+                          android:src="@drawable/ic_next" />
+
+                      <ImageView
+                          style="@style/ArrowImage"
+                          android:src="@drawable/ic_next" />
+
+                      <ImageView
+                          style="@style/ArrowImage"
+                          android:src="@drawable/ic_next" />
+
+                      <ImageView
+                          style="@style/ArrowImage"
+                          android:src="@drawable/ic_next" />
+
+                      <ImageView
+                          style="@style/ArrowImage"
+                          android:src="@drawable/ic_next" />
+
+                      <ImageView
+                          style="@style/ArrowImage"
+                          android:src="@drawable/ic_next" />
+
+                      <ImageView
+                          style="@style/ArrowImage"
+                          android:src="@drawable/ic_next" />
+
+                      <ImageView
+                          style="@style/ArrowImage"
+                          android:src="@drawable/ic_next" />
+
+                      <ImageView
+                          style="@style/ArrowImage"
+                          android:src="@drawable/ic_next" />
+
+                      <ImageView
+                          style="@style/ArrowImage"
+                          android:src="@drawable/ic_next" />
+
+                      <ImageView
+                          style="@style/ArrowImage"
+                          android:src="@drawable/ic_next" />
+
+                      <ImageView
+                          style="@style/ArrowImage"
+                          android:src="@drawable/ic_next" />
+
+                      <ImageView
+                          style="@style/ArrowImage"
+                          android:src="@drawable/ic_next" />
+
+                  </LinearLayout>
+
+                  <LinearLayout
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:gravity="center"
+                      android:orientation="vertical"
+                      android:visibility="gone">
+
+
+                      <Spinner
+                          android:id="@+id/A1"
+                          style="@style/spinner" />
+
+                      <Spinner
+                          android:id="@+id/A2"
+                          style="@style/spinner" />
+
+                      <Spinner
+                          android:id="@+id/A3"
+                          style="@style/spinner" />
+
+                      <Spinner
+                          android:id="@+id/B0"
+                          style="@style/spinner" />
+
+                      <Spinner
+                          android:id="@+id/B1"
+                          style="@style/spinner" />
+
+                      <Spinner
+                          android:id="@+id/B2"
+                          style="@style/spinner" />
+
+                      <Spinner
+                          android:id="@+id/B3"
+                          style="@style/spinner" />
+
+                      <Spinner
+                          android:id="@+id/C0"
+                          style="@style/spinner" />
+
+                      <Spinner
+                          android:id="@+id/C1"
+                          style="@style/spinner" />
+
+                      <Spinner
+                          android:id="@+id/C2"
+                          style="@style/spinner" />
+
+                      <Spinner
+                          android:id="@+id/C3"
+                          style="@style/spinner" />
+
+                      <Spinner
+                          android:id="@+id/D0"
+                          style="@style/spinner" />
+
+                      <Spinner
+                          android:id="@+id/D1"
+                          style="@style/spinner" />
+
+                      <Spinner
+                          android:id="@+id/D3"
+                          style="@style/spinner" />
+
+                      <Spinner
+                          android:id="@+id/E0"
+                          style="@style/spinner" />
+
+                      <Spinner
+                          android:id="@+id/E1"
+                          style="@style/spinner" />
+
+                      <Spinner
+                          android:id="@+id/E2"
+                          style="@style/spinner" />
+
+                      <Spinner
+                          android:id="@+id/E3"
+                          style="@style/spinner" />
+
+                      <Spinner
+                          android:id="@+id/F0"
+                          style="@style/spinner" />
+
+                      <Spinner
+                          android:id="@+id/F1"
+                          style="@style/spinner" />
+
+                      <Spinner
+                          android:id="@+id/F2"
+                          style="@style/spinner" />
+
+                      <Spinner
+                          android:id="@+id/F3"
+                          style="@style/spinner" />
+
+                      <Spinner
+                          android:id="@+id/G0"
+                          style="@style/spinner" />
+
+                      <Spinner
+                          android:id="@+id/G1"
+                          style="@style/spinner" />
+
+                      <Spinner
+                          android:id="@+id/G2"
+                          style="@style/spinner" />
+
+                  </LinearLayout>
+              </LinearLayout>
+  -->
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</RelativeLayout>
