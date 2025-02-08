@@ -1,6 +1,6 @@
 # KB-androidApplication
 
-Keybee Keyboard Android Application which is currently available in the Google Play store. 
+Keybee Keyboard Android Application which is currently available in the Google Play store. We want to create the fastest, the most accurate and the most comfortable touchscreen keyboard in the World.
 
 ******************************************************************************************
 Please note that the usability and design pillars of Keybee Keyboard layout are made to maximize the efficiency of typing and swiping with one finger. 
