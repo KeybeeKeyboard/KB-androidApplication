@@ -4,7 +4,7 @@ Keybee Keyboard Android Application which is currently available in the Google P
 
 ******************************************************************************************
 Please note that the usability and design pillars of Keybee Keyboard layout are made to maximize the efficiency of typing and swiping with one finger. 
-Before altering the layout use common sense and read the related patent documentation (WO2014111963A3 and EP2946267A2) which can be recap with these three points:
+Before altering the layout use common sense and read the related patent documentation (WO2014111963A3 and EP2946267A2 - the patent has expired years ago and is not giving any commercial advantage to the developer) which can be recap with these three points:
 
 1) Hexagonal key structure which means that each key is connected to SIX other keys. Not less. Not more.
 2) The space key MUST be in the center of the Keybee Keyboard layout.
