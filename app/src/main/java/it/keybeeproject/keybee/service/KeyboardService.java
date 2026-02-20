@@ -50,6 +50,8 @@ import it.keybeeproject.keybee.utility.Utility;
 import it.keybeeproject.keybee.view.ButtonHexagon;
 import it.keybeeproject.keybee.view.TextViewCustom;
 
+import static android.text.InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS;
+import static android.text.InputType.TYPE_TEXT_VARIATION_URI;
 import static android.view.inputmethod.InputConnection.CURSOR_UPDATE_MONITOR;
 import static androidx.annotation.Dimension.SP;
 
@@ -1579,6 +1581,13 @@ public class KeyboardService extends InputMethodService implements
             KEYCODE_DOT_APOSTROPHE = '\'';
             KEYCODE_DOT_APOSTROPHE1 = '.';
         }
+        EditorInfo editorInfo = getCurrentInputEditorInfo();
+        int inputType = editorInfo.inputType;
+        boolean textFieldIsURI = (inputType & TYPE_TEXT_VARIATION_URI) != 0;
+        boolean textFieldIsEmailAddress = (inputType & TYPE_TEXT_VARIATION_EMAIL_ADDRESS) != 0;
+        char symbol = (textFieldIsURI || textFieldIsEmailAddress) ? '.' : KEYCODE_DOT_APOSTROPHE1;
+        char central = textFieldIsEmailAddress ? '@' : KEYCODE_SPACE;
+
         try {
             /**
              *  arrKeyCode [ button ] [ layout ] [ language ];
@@ -1621,12 +1630,12 @@ public class KeyboardService extends InputMethodService implements
                     {{PrefData.getStringPrefs(this,PrefData.A1_EN,"z").charAt(0)}, {PrefData.getStringPrefs(this,PrefData.A1_IT,"v").charAt(0)}, {PrefData.getStringPrefs(this,PrefData.A1_SP,"b").charAt(0)}, {PrefData.getStringPrefs(this,PrefData.A1_DE,"y").charAt(0)}, {'4'}, {'{'}},      // 15, a1
                     {{PrefData.getStringPrefs(this,PrefData.B2_EN,"r").charAt(0)}, {PrefData.getStringPrefs(this,PrefData.B2_IT,"r").charAt(0)}, {PrefData.getStringPrefs(this,PrefData.B2_SP,"l").charAt(0)}, {PrefData.getStringPrefs(this,PrefData.B2_DE,"r").charAt(0)}, {'8'}, {'°'}},      // 16, b2
                     {{PrefData.getStringPrefs(this,PrefData.C1_EN,"o").charAt(0)}, {PrefData.getStringPrefs(this,PrefData.C1_IT,"e").charAt(0)}, {PrefData.getStringPrefs(this,PrefData.C1_SP,"o").charAt(0)}, {PrefData.getStringPrefs(this,PrefData.C1_DE,"n").charAt(0)}, {'6'}, {'}'}},      // 17, c1
-                    {{KEYCODE_SPACE},                                // 18, d2
-                            {KEYCODE_SPACE},
-                            {KEYCODE_SPACE},
-                            {KEYCODE_SPACE},
-                            {KEYCODE_SPACE},
-                            {KEYCODE_SPACE}},
+                    {{central},                                // 18, d2
+                            {central},
+                            {central},
+                            {central},
+                            {central},
+                            {central}},
                     {{PrefData.getStringPrefs(this,PrefData.E1_EN,"t").charAt(0)}, {PrefData.getStringPrefs(this,PrefData.E1_IT,"l").charAt(0)}, {PrefData.getStringPrefs(this,PrefData.E1_SP,"y").charAt(0)}, {PrefData.getStringPrefs(this,PrefData.E1_DE,"s").charAt(0)}, {'('}, {'['}},      // 19, e1
                     {{PrefData.getStringPrefs(this,PrefData.F2_EN,"y").charAt(0)}, {PrefData.getStringPrefs(this,PrefData.F2_IT,"g").charAt(0)}, {PrefData.getStringPrefs(this,PrefData.F2_SP,"d").charAt(0)}, {PrefData.getStringPrefs(this,PrefData.F2_DE,"t").charAt(0)}, {':'}, {'\\'}},     // 20, f2
                     {{PrefData.getStringPrefs(this,PrefData.G1_EN,"g").charAt(0)}, {PrefData.getStringPrefs(this,PrefData.G1_IT,"y").charAt(0)}, {PrefData.getStringPrefs(this,PrefData.G1_SP,"j").charAt(0)}, {PrefData.getStringPrefs(this,PrefData.G1_DE,"f").charAt(0)}, {')'}, {']'}},      // 21, g1
@@ -1659,7 +1668,7 @@ public class KeyboardService extends InputMethodService implements
                             {KeyEvent.KEYCODE_DEL},
                             {KeyEvent.KEYCODE_DEL},
                             {KeyEvent.KEYCODE_DEL}},
-                    {{KEYCODE_DOT_APOSTROPHE1}, {KEYCODE_DOT_APOSTROPHE1}, {KEYCODE_DOT_APOSTROPHE1}, {KEYCODE_DOT_APOSTROPHE1}, {','}, {'…'}},// 35, g3
+                    {{symbol}, {symbol}, {symbol}, {symbol}, {','}, {'…'}},// 35, g3
                     {{KEYCODE_SETTINGS},                             // 36, 36
                             {KEYCODE_SETTINGS},
                             {KEYCODE_SETTINGS},
