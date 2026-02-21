@@ -50,6 +50,7 @@ import it.keybeeproject.keybee.utility.Utility;
 import it.keybeeproject.keybee.view.ButtonHexagon;
 import it.keybeeproject.keybee.view.TextViewCustom;
 
+import static android.text.InputType.TYPE_CLASS_TEXT;
 import static android.text.InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS;
 import static android.text.InputType.TYPE_TEXT_VARIATION_URI;
 import static android.view.inputmethod.InputConnection.CURSOR_UPDATE_MONITOR;
@@ -94,7 +95,7 @@ public class KeyboardService extends InputMethodService implements
     private final char KEYCODE_SYM = (char) -111,
             KEYCODE_NUM = (char) -112,
             KEYCODE_ABC = (char) -113,
-            KEYCODE_SPACE = (char) -114,
+            KEYCODE_SPACE = ' ',
             KEYCODE_SHIFT = (char) -115,
             KEYCODE_SETTINGS = (char) -116,
             KEYCODE_EMOTICON = (char) -117,
@@ -899,8 +900,6 @@ public class KeyboardService extends InputMethodService implements
         arrButtons[buttonPosition].setKeyCode(arrKeyCode[buttonPosition][currentLayout][currentLanguage]);
 
         switch (arrKeyCode[buttonPosition][currentLayout][currentLanguage]) {
-            case KEYCODE_SPACE:
-                break;
             case KEYCODE_SYM:
                 arrButtons[buttonPosition].setText(R.string.sym);
                 arrButtons[buttonPosition].setIcon(0);
@@ -1340,7 +1339,8 @@ public class KeyboardService extends InputMethodService implements
 
         setButtonValues();
         //for (int i = 0; i < arrButtons.length; i++) {
-        setButtonText(34);
+        setButtonText(17); // space
+        setButtonText(34); // ./'
        // }
 
         if (editorInfo != null) {
@@ -1583,8 +1583,8 @@ public class KeyboardService extends InputMethodService implements
         }
         EditorInfo editorInfo = getCurrentInputEditorInfo();
         int inputType = editorInfo.inputType;
-        boolean textFieldIsURI = (inputType & TYPE_TEXT_VARIATION_URI) != 0;
-        boolean textFieldIsEmailAddress = (inputType & TYPE_TEXT_VARIATION_EMAIL_ADDRESS) != 0;
+        boolean textFieldIsURI = (inputType & 0xff) == (TYPE_CLASS_TEXT | TYPE_TEXT_VARIATION_URI);
+        boolean textFieldIsEmailAddress = (inputType & 0xff) == (TYPE_CLASS_TEXT | TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
         char symbol = (textFieldIsURI || textFieldIsEmailAddress) ? '.' : KEYCODE_DOT_APOSTROPHE1;
         char central = textFieldIsEmailAddress ? '@' : KEYCODE_SPACE;
 
