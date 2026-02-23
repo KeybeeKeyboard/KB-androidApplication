@@ -589,7 +589,7 @@ public class KeyboardService extends InputMethodService implements
                             updateOnShift();
                         }
                     } else if ((currentText == null || currentText.length() == 0) && !isShiftOn &&
-                            !isAutocapitalizationEnable) {
+                            shouldCapitalize(getCurrentInputEditorInfo())) {
                         isShiftOn = true;
                         updateOnShift();
                     }
@@ -1300,16 +1300,8 @@ public class KeyboardService extends InputMethodService implements
 
         isCapsLockOn = false;
 
-        boolean isSearch = false;
         if (button38 != null) {
-            switch (editorInfo.imeOptions & (EditorInfo.IME_MASK_ACTION | EditorInfo.IME_FLAG_NO_ENTER_ACTION)) {
-                case EditorInfo.IME_ACTION_SEARCH:
-                    button38.setIcon(R.drawable.ic_search);
-                    isSearch = true;
-                    break;
-                default:
-                    button38.setIcon(R.drawable.ic_enter);
-            }
+            button38.setIcon(isSearch(editorInfo) ? R.drawable.ic_search : R.drawable.ic_enter);
         }
 
         ExtractedTextRequest request = new ExtractedTextRequest();
@@ -1322,7 +1314,7 @@ public class KeyboardService extends InputMethodService implements
         }
         if (getCurrentInputConnection() != null) {
             ExtractedText extractedText = getCurrentInputConnection().getExtractedText(request, 0);
-            isShiftOn = !isSearch && extractedText != null && extractedText.text.toString().length() == 0;
+            isShiftOn = !isSearch(editorInfo) && extractedText != null && extractedText.text.toString().length() == 0;
             if (isAutocapitalizationEnable) {
                 isCapsLockOn = false;// if edit text excepts text with number then show keyboard with small text.
                 isShiftOn = false;
@@ -1346,7 +1338,9 @@ public class KeyboardService extends InputMethodService implements
         if (editorInfo != null) {
             int i = editorInfo.inputType;
             if ((i == (InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD)) ||
-                    (i == (InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_VARIATION_PASSWORD))) {
+                    (i == (InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_VARIATION_PASSWORD)) ||
+                    !shouldCapitalize(editorInfo))
+            {
                 isCapsLockOn = false;// if edit text excepts only text with number then show keyboard with small text.
                 isShiftOn = false;
                 updateOnShift();
@@ -1573,6 +1567,24 @@ public class KeyboardService extends InputMethodService implements
         }
     }
 
+    private static boolean isUri(EditorInfo info) {
+        int inputType = info.inputType;
+        return (inputType & 0xff) == (TYPE_CLASS_TEXT | TYPE_TEXT_VARIATION_URI);
+    }
+
+    private static boolean isEmailAddress(EditorInfo info) {
+        int inputType = info.inputType;
+        return (inputType & 0xff) == (TYPE_CLASS_TEXT | TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
+    }
+
+    private static boolean isSearch(EditorInfo info) {
+        return (info.imeOptions & (EditorInfo.IME_MASK_ACTION | EditorInfo.IME_FLAG_NO_ENTER_ACTION)) == EditorInfo.IME_ACTION_SEARCH;
+    }
+
+    private boolean shouldCapitalize(EditorInfo info) {
+        return !isAutocapitalizationEnable && !isUri(info) && !isEmailAddress(info) && !isSearch(info);
+    }
+
     private void setButtonValues() {
         char KEYCODE_DOT_APOSTROPHE = '.';
         char KEYCODE_DOT_APOSTROPHE1 = '\'';
@@ -1582,11 +1594,8 @@ public class KeyboardService extends InputMethodService implements
             KEYCODE_DOT_APOSTROPHE1 = '.';
         }
         EditorInfo editorInfo = getCurrentInputEditorInfo();
-        int inputType = editorInfo.inputType;
-        boolean textFieldIsURI = (inputType & 0xff) == (TYPE_CLASS_TEXT | TYPE_TEXT_VARIATION_URI);
-        boolean textFieldIsEmailAddress = (inputType & 0xff) == (TYPE_CLASS_TEXT | TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
-        char symbol = (textFieldIsURI || textFieldIsEmailAddress) ? '.' : KEYCODE_DOT_APOSTROPHE1;
-        char central = textFieldIsEmailAddress ? '@' : KEYCODE_SPACE;
+        char symbol = (isUri(editorInfo) || isEmailAddress(editorInfo)) ? '.' : KEYCODE_DOT_APOSTROPHE1;
+        char central = isEmailAddress(editorInfo) ? '@' : KEYCODE_SPACE;
 
         try {
             /**
