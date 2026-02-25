@@ -27,5 +27,7 @@
     <string name="subscribe">SOTTOSCRIVI</string>
     <string name="reset">RESET</string>
     <string name="CUSTOMIZE" >PERSONALIZZA</string>
+    <string name="is_at_central">Metti @ al centro negli indirizzi mail</string>
+    <string name="is_at_central_description">Mette il tasto @ al centro quando digiti un indirizzo mail</string>
 
 </resources>

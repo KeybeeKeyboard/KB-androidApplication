@@ -1595,7 +1595,8 @@ public class KeyboardService extends InputMethodService implements
         }
         EditorInfo editorInfo = getCurrentInputEditorInfo();
         char symbol = (isUri(editorInfo) || isEmailAddress(editorInfo)) ? '.' : KEYCODE_DOT_APOSTROPHE1;
-        char central = isEmailAddress(editorInfo) ? '@' : KEYCODE_SPACE;
+        boolean centralAtInMail = PrefData.getBooleanPrefs(this, PrefData.KEY_IS_AT_CENTRAL);
+        char central = isEmailAddress(editorInfo) && centralAtInMail ? '@' : KEYCODE_SPACE;
 
         try {
             /**
