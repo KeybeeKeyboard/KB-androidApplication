@@ -596,12 +596,14 @@ public class SettingsActivity extends AppCompatActivity {
 
     private void enableOtherSizeSettings(boolean enable) {
         int textColor = enable ? getResources().getColor(R.color.black) : getResources().getColor(R.color.text_gray);
+        float checkAlpha = enable ? 1.0f : 0.4f;
         linearSize.setEnabled(enable);
         textSize.setTextColor(textColor);
         linearAlignment.setEnabled(enable);
         textAlignment.setTextColor(textColor);
         relativeLateralGap.setEnabled(enable);
         textLateralGap.setTextColor(textColor);
+        checkLateralGapFill.setAlpha(checkAlpha);
     }
 
     @Override
