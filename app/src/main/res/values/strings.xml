@@ -39,6 +39,8 @@
     <string name="text_settings">Text settings</string>
     <string name="dot_space">Dot + space</string>
     <string name="dot_space_intro">Go to main keyboard after dot + space</string>
+    <string name="main_after_space">Main after space</string>
+    <string name="main_after_space_intro">Go to main keyboard after pressing space</string>
     <string name="letter_preview">Letter preview</string>
     <string name="letter_preview_intro">Show the preview on key press</string>
     <string name="feedback_settings">Feedback settings</string>

@@ -53,6 +53,8 @@ import it.keybeeproject.keybee.view.TextViewCustom;
 import static android.view.inputmethod.InputConnection.CURSOR_UPDATE_MONITOR;
 import static androidx.annotation.Dimension.SP;
 
+import com.google.android.gms.common.util.ArrayUtils;
+
 /**
  * Created by c161 on 22/07/16.
  */
@@ -100,13 +102,16 @@ public class KeyboardService extends InputMethodService implements
     private long currentRepeatInterval = ButtonHexagon.INTERVAL_REPEAT_INITIAL;
     private final int buttonGap = 2; // Must be an even number
     //	private final int buttonGap = 0; // Must be an even number
+
+    // A space after one of these characters should be capitalized
+    public static final Character[] PUNCTUATION_CHARS_REQUIRING_CAPITALIZATION = {'.', '!', '?'};
     private final int cursorThresholdH = 20;
     private final int cursorThresholdV = 80;
     private int keyboardTopPadding, keyboardHeight, keyboardWidth, currentLanguageLayout, currentLanguage, currentLayout,
             currentAlignment, lastMoveId = -1, lastDownId, bgEmoji, hMove, candidateHeight = 0;
     private boolean isTopGap,isFullWidth, isShiftOn, isCapsLockOn, isSoundEnabled, isVibraEnabled, isDotSpaceEnabled,
             isPreviewOn, isMoved, isSizeChanged, isTwipeEnabled, isFirstButtonReset, isCursorEnabled, isCursorModeOn,
-            isTextSuggestionEnabled, isCandidateClicked, isAutocapitalizationEnable;
+            isTextSuggestionEnabled, isCandidateClicked, isAutocapitalizationEnable, isMainAfterSpaceEnabled;
     private boolean isActionDownCalled = false; // If user clicks outside of keyboard then text should not appear.For that ACTION_DOWN will be called but flag will not be true so that ACTION_UP will be called but due to condition code will not be execute.
     private final char space = 32;
     private float lastX, lastY, keyboardSize;
@@ -203,6 +208,7 @@ public class KeyboardService extends InputMethodService implements
         isSoundEnabled = PrefData.getBooleanPrefs(this, PrefData.KEY_IS_SOUND_ENABLED_B);
         isVibraEnabled = PrefData.getBooleanPrefs(this, PrefData.KEY_IS_VIBRA_ENABLED_B);
         isDotSpaceEnabled = PrefData.getBooleanPrefs(this, PrefData.KEY_IS_DOT_SPACE_ENABLED_B, true);
+        isMainAfterSpaceEnabled = PrefData.getBooleanPrefs(this, PrefData.KEY_IS_MAIN_AFTER_SPACE_ENABLED_B, false);
         isPreviewOn = PrefData.getBooleanPrefs(this, PrefData.KEY_IS_PREVIEW_ENABLED_B, true);
         isTwipeEnabled = PrefData.getBooleanPrefs(this, PrefData.KEY_IS_TWIPE_ENABLED_B, true);
         isCursorEnabled = PrefData.getBooleanPrefs(this, PrefData.KEY_IS_CURSOR_ENABLED_B, true);
@@ -573,12 +579,21 @@ public class KeyboardService extends InputMethodService implements
                 case KeyEvent.KEYCODE_DEL:
                     updateOnBackSpace();
 
-                    /**
-                     * Check for dot + space
-                     */
                     String currentText = getCurrentInputConnection().getTextBeforeCursor(2, 0).toString();
                     if (currentText != null && currentText.length() > 1) {
-                        if (isDotSpaceEnabled && currentText.equals(". ") && !isShiftOn) {
+                        /**
+                         * Check for punctuation + space
+                         */
+                        if (isMainAfterSpaceEnabled &&
+                                currentText.charAt(1) == ' ' &&
+                                ArrayUtils.contains(PUNCTUATION_CHARS_REQUIRING_CAPITALIZATION, currentText.charAt(0))) {
+                            isShiftOn = true;
+                            updateOnShift();
+                        }
+                        /**
+                         * Check for dot + space
+                         */
+                        else if (isDotSpaceEnabled && currentText.equals(". ") && !isShiftOn) {
                             isShiftOn = true;
                             updateOnShift();
                         } else if (isShiftOn && !isCapsLockOn) {
@@ -1445,9 +1460,25 @@ public class KeyboardService extends InputMethodService implements
         }
 
         /**
+         * Check for space after any character, and switch to abc layout
+         */
+        if (isMainAfterSpaceEnabled && code == space) {
+            // If anyone presses space and the previous character was punctuation, then switch back to main
+            // We should enable shift for punctuation that should be capitalized after, if they want autocapitalization
+            Character previousChar = inputConnection.getTextBeforeCursor(2, 0).charAt(0);
+            if (ArrayUtils.contains(PUNCTUATION_CHARS_REQUIRING_CAPITALIZATION, previousChar)) {
+                isShiftOn = true;
+                updateOnShift();
+            }
+
+            if (currentLayout == PrefData.VAL_LAYOUT_NUMBER || currentLayout == PrefData.VAL_LAYOUT_SYMBOL) {
+                updateOnAbc();
+            }
+        }
+        /**
          * Check for dot + space
          */
-        if (isDotSpaceEnabled && code == space && inputConnection.getTextBeforeCursor(2, 0).charAt(0) == '.' && !isShiftOn) {
+        else if (isDotSpaceEnabled && code == space && inputConnection.getTextBeforeCursor(2, 0).charAt(0) == '.' && !isShiftOn) {
             isShiftOn = true;
             updateOnShift();
             if (currentLayout == PrefData.VAL_LAYOUT_NUMBER || currentLayout == PrefData.VAL_LAYOUT_SYMBOL) {
@@ -1523,6 +1554,9 @@ public class KeyboardService extends InputMethodService implements
                 break;
             case PrefData.KEY_IS_DOT_SPACE_ENABLED_B:
                 isDotSpaceEnabled = PrefData.getBooleanPrefs(this, PrefData.KEY_IS_DOT_SPACE_ENABLED_B);
+                break;
+            case PrefData.KEY_IS_MAIN_AFTER_SPACE_ENABLED_B:
+                isMainAfterSpaceEnabled = PrefData.getBooleanPrefs(this, PrefData.KEY_IS_MAIN_AFTER_SPACE_ENABLED_B);
                 break;
             case PrefData.KEY_IS_PREVIEW_ENABLED_B:
                 isPreviewOn = PrefData.getBooleanPrefs(this, PrefData.KEY_IS_PREVIEW_ENABLED_B);

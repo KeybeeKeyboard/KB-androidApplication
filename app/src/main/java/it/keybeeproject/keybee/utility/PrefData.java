@@ -34,6 +34,7 @@ public class PrefData {
 	public static final String KEY_KEYBOARD_LAYOUT_CUSTOMPOPUP = "keyboardLayout_custom_popup";
 	public static final String KEY_KEYBOARD_LANGUAGE_I = "keyboardLanguage";
     public static final String KEY_IS_DOT_SPACE_ENABLED_B = "isDotSpaceEnabled";
+    public static final String KEY_IS_MAIN_AFTER_SPACE_ENABLED_B = "isMainAfterSpaceEnabled";
     public static final String KEY_IS_PREVIEW_ENABLED_B = "isPreviewEnabled";
     public static final String KEY_IS_TWIPE_ENABLED_B = "isTwipeEnabled";
     public static final String KEY_IS_CURSOR_ENABLED_B = "isCursorEnabled";

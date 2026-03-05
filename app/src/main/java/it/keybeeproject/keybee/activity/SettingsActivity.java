@@ -33,18 +33,18 @@ import it.keybeeproject.keybee.utility.Utility;
 
 public class SettingsActivity extends AppCompatActivity {
 
-    private TextView textSize, textSizeIntro, textAlignment, textAlignmentIntro, textLateralGap, textThemeIntro,
+    private TextView textSize, textSizeIntro, textAlignment, textAlignmentIntro, textLateralGap, textThemeIntro, textDotSpace,
             textLayoutIntro, textSelectedCurrency, text_theme_subsription/*, textAutoCorrection, textAutoCompletion, textLanguageDictionary*/;
     private LinearLayout linearEnable, linearTutorial, linearProjectInfo, linearSize, linearAlignment, linearTheme,
             linearLayout, linearKeybee, linearGithub, linearKeybeecontest, linearFacebook, linearTwitter, linearLinkedIn, linearDonate, linearCurrency;
-    private RelativeLayout relative_topgap,relativeFullWidth, relativeLateralGap, relativeSound, relativeVibra, relativeDotSpace, linear_free_theme,
+    private RelativeLayout relative_topgap,relativeFullWidth, relativeMainAfterSpace, relativeLateralGap, relativeSound, relativeVibra, relativeDotSpace, linear_free_theme,
             relativePreview, relativeTwipe, relativeCursor, relativeDotApostophe, relativeTextCorrection, relativeTextAutoCapitalization, relative_notification;
     private ImageView img_apply_theme;
     private String[] arrSizeTitle, arrAlignmentTitle, arrLayoutTitle, arrCurrencyTitle, arrLanguageCode;
     private float[] arrSizeValue;
     private int currentKeyboardLayout;
     private CheckBox check_topgap,checkFullWidth, checkLateralGapFill, checkSound, checkVibra, checkDotSpace, checkPreview, checkTwipe,
-            checkCursor, checkDotApostophe, checkTextSuggestion, checkTextAutoCapitalization, check_notification;
+            checkCursor, checkDotApostophe, checkTextSuggestion, checkTextAutoCapitalization, check_notification, checkMainAfterSpace;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +77,7 @@ public class SettingsActivity extends AppCompatActivity {
         textSelectedCurrency = findViewById(R.id.text_selectedCurrency);
         textLateralGap = findViewById(R.id.text_lateralGap);
         text_theme_subsription = findViewById(R.id.text_theme_subsription);
+        textDotSpace = findViewById(R.id.text_dotSpace);
 
         linearEnable = findViewById(R.id.linear_enable);
         linearTutorial = findViewById(R.id.linear_tutorial);
@@ -102,6 +103,7 @@ public class SettingsActivity extends AppCompatActivity {
         relativeSound = findViewById(R.id.relative_sound);
         relativeVibra = findViewById(R.id.relative_vibra);
         relativeDotSpace = findViewById(R.id.relative_dotSpace);
+        relativeMainAfterSpace = findViewById(R.id.relative_mainAfterSpace);
         relativePreview = findViewById(R.id.relative_preview);
         relativeTwipe = findViewById(R.id.relative_twipe);
         relativeCursor = findViewById(R.id.relative_cursor);
@@ -117,6 +119,7 @@ public class SettingsActivity extends AppCompatActivity {
         checkSound = findViewById(R.id.check_sound);
         checkVibra = findViewById(R.id.check_vibra);
         checkDotSpace = findViewById(R.id.check_dotSpace);
+        checkMainAfterSpace = findViewById(R.id.check_mainAfterSpace);
         checkPreview = findViewById(R.id.check_preview);
         checkTwipe = findViewById(R.id.check_twipe);
         checkCursor = findViewById(R.id.check_cursor);
@@ -247,6 +250,15 @@ public class SettingsActivity extends AppCompatActivity {
             public void onClick(View view) {
                 checkDotSpace.setChecked(!checkDotSpace.isChecked());
                 PrefData.setBooleanPrefs(SettingsActivity.this, PrefData.KEY_IS_DOT_SPACE_ENABLED_B, checkDotSpace.isChecked());
+            }
+        });
+
+        relativeMainAfterSpace.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                checkMainAfterSpace.setChecked(!checkMainAfterSpace.isChecked());
+                PrefData.setBooleanPrefs(SettingsActivity.this, PrefData.KEY_IS_MAIN_AFTER_SPACE_ENABLED_B, checkMainAfterSpace.isChecked());
+                enableDotSpaceSettings(!checkMainAfterSpace.isChecked());
             }
         });
 
@@ -462,9 +474,11 @@ public class SettingsActivity extends AppCompatActivity {
 
     private void initTextSettings() {
         checkDotSpace.setChecked(PrefData.getBooleanPrefs(SettingsActivity.this, PrefData.KEY_IS_DOT_SPACE_ENABLED_B, true));
+        checkMainAfterSpace.setChecked(PrefData.getBooleanPrefs(SettingsActivity.this, PrefData.KEY_IS_MAIN_AFTER_SPACE_ENABLED_B, false));
         checkPreview.setChecked(PrefData.getBooleanPrefs(SettingsActivity.this, PrefData.KEY_IS_PREVIEW_ENABLED_B, true));
         checkTextSuggestion.setChecked(PrefData.getBooleanPrefs(SettingsActivity.this, PrefData.KEY_IS_TEXT_SUGGESTION_ENABLED_B));
         checkTextAutoCapitalization.setChecked(PrefData.getBooleanPrefs(SettingsActivity.this, PrefData.KEY_IS_TEXT_AUTOCAPITALIZATION_ENABLED_B));
+        enableDotSpaceSettings(!checkMainAfterSpace.isChecked());
     }
 
     private void showCurrencyDialog() {
@@ -602,6 +616,14 @@ public class SettingsActivity extends AppCompatActivity {
         textAlignment.setTextColor(textColor);
         relativeLateralGap.setEnabled(enable);
         textLateralGap.setTextColor(textColor);
+    }
+
+    private void enableDotSpaceSettings(boolean enable) {
+        int textColor = enable ? getResources().getColor(R.color.black) : getResources().getColor(R.color.text_gray);
+        float checkAlpha = enable ? 1.0f : 0.4f;
+        relativeDotSpace.setEnabled(enable);
+        textDotSpace.setTextColor(textColor);
+        checkDotSpace.setAlpha(checkAlpha);
     }
 
     @Override
