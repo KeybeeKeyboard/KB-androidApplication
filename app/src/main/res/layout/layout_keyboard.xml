@@ -57,6 +57,9 @@
             android:layout_below="@id/linear_candidateView"
             android:layout_marginLeft="0dp"
             app:hexagonShape="lower_half"
+            app:longClickEnabled="true"
+            app:customizableIndex="0"
+            app:custom_font="@string/key_font"
             app:previewEnabled="false" />
 
         <it.keybeeproject.keybee.view.ButtonHexagon
@@ -73,6 +76,9 @@
             android:layout_below="@id/linear_candidateView"
             android:layout_alignLeft="@id/button2"
             app:hexagonShape="lower_half"
+            app:longClickEnabled="true"
+            app:customizableIndex="1"
+            app:custom_font="@string/key_font"
             app:previewEnabled="false" />
 
         <it.keybeeproject.keybee.view.ButtonHexagon
@@ -89,6 +95,9 @@
             android:layout_below="@id/linear_candidateView"
             android:layout_alignLeft="@id/button4"
             app:hexagonShape="lower_half"
+            app:longClickEnabled="true"
+            app:customizableIndex="2"
+            app:custom_font="@string/key_font"
             app:previewEnabled="false" />
 
         <it.keybeeproject.keybee.view.ButtonHexagon
@@ -105,6 +114,9 @@
             android:layout_below="@id/linear_candidateView"
             android:layout_alignLeft="@id/button6"
             app:hexagonShape="lower_half"
+            app:longClickEnabled="true"
+            app:customizableIndex="3"
+            app:custom_font="@string/key_font"
             app:previewEnabled="false" />
 
         <it.keybeeproject.keybee.view.ButtonHexagon
@@ -351,8 +363,8 @@
             android:paddingBottom="@dimen/dp2"
             app:custom_font="@string/font_dosis_light"
             app:hexagonShape="upper_half"
-            app:icon="@drawable/ic_settings"
             app:longClickEnabled="true"
+            app:customizableIndex="4"
             app:previewEnabled="false" />
 
         <it.keybeeproject.keybee.view.ButtonHexagon
@@ -361,7 +373,9 @@
             android:layout_below="@id/button31"
             android:layout_alignLeft="@id/button30"
             app:hexagonShape="upper_half"
-            app:icon="@drawable/ic_emoticon"
+            app:longClickEnabled="true"
+            app:customizableIndex="5"
+            app:custom_font="@string/key_font"
             app:previewEnabled="false" />
 
         <it.keybeeproject.keybee.view.ButtonHexagon
@@ -370,7 +384,9 @@
             android:layout_below="@id/button33"
             android:layout_alignLeft="@id/button32"
             app:hexagonShape="upper_half"
-            app:icon="@drawable/ic_enter"
+            app:longClickEnabled="true"
+            app:customizableIndex="6"
+            app:custom_font="@string/key_font"
             app:previewEnabled="false" />
 
         <it.keybeeproject.keybee.view.ButtonHexagon
@@ -381,6 +397,8 @@
             app:hexagonShape="upper_half"
             app:icon="@drawable/ic_align_left"
             app:longClickEnabled="true"
+            app:customizableIndex="7"
+            app:custom_font="@string/key_font"
             app:previewEnabled="false" />
 
     </RelativeLayout>

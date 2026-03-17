@@ -22,6 +22,7 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import it.keybeeproject.keybee.R;
+import it.keybeeproject.keybee.model.ButtonAction;
 import it.keybeeproject.keybee.service.KeyboardService;
 import it.keybeeproject.keybee.utility.DrawableHelper;
 import it.keybeeproject.keybee.utility.PrefData;
@@ -49,7 +50,7 @@ public class ButtonHexagon extends AppCompatButton {
 
     private int[] vertexX, vertexY, location;
     private int modeHexagon /*  1:full, 2:upper_half, 3:lower_half  */, previewWidth, popupItemWidth, previewHeight, previewMarginLeft,
-            wd2, wd4, hd2, lastId, iconResId, mainCharPosition = 0, colorIconFullHexagon, colorIconBottomLine;
+            wd2, wd4, hd2, lastId, iconResId, mainCharPosition = 0, colorIconFullHexagon, colorIconBottomLine, customizableIndex;
     private float previewTextSize, popupTextSize;
     private final long DELAY_LONG_CLICK = 500, DELAY_PREVIEW_DISMISS = 90, DELAY_POPUP_DISPLAY = 275,
             DELAY_HOVER_RESPONSE = 90;
@@ -111,6 +112,7 @@ public class ButtonHexagon extends AppCompatButton {
                 isLongClickEnabled = typedArray.getBoolean(R.styleable.ButtonHexagon_longClickEnabled, false);
                 isSpecialKey = typedArray.getBoolean(R.styleable.ButtonHexagon_isSpecialKey, false);
                 iconResId = typedArray.getResourceId(R.styleable.ButtonHexagon_icon, 0);
+                customizableIndex = typedArray.getInteger(R.styleable.ButtonHexagon_customizableIndex, -1);
 
                 initRepetitiveRunnable();
 
@@ -191,7 +193,6 @@ public class ButtonHexagon extends AppCompatButton {
 
     @Override
     protected void onDraw(Canvas canvas) {
-
         if (isActionDown) {
 
             canvas.drawPath(path, paintSelection);
@@ -238,6 +239,11 @@ public class ButtonHexagon extends AppCompatButton {
             wd4 = width / 4; // wd4(width divided by 4)
             hd2 = height / 2; // hd2(height divided by 2)
 
+            path = new Path();
+
+            paintSelection = new Paint(Paint.ANTI_ALIAS_FLAG);
+            paintSelection.setStyle(Paint.Style.FILL);
+
             switch (modeHexagon) {
                 case 1: //  Full hexagon
                     vertexX = new int[6];
@@ -257,16 +263,12 @@ public class ButtonHexagon extends AppCompatButton {
                     vertexY[4] = bottom;
                     vertexY[5] = bottom - hd2;
 
-                    path = new Path();
                     path.moveTo(vertexX[0], vertexY[0]);
                     for (int i = 1; i < vertexX.length; i++) {
                         path.lineTo(vertexX[i], vertexY[i]);
                     }
                     path.lineTo(vertexX[0], vertexY[0]);
                     path.close();
-
-                    paintSelection = new Paint(Paint.ANTI_ALIAS_FLAG);
-                    paintSelection.setStyle(Paint.Style.FILL);
 
                     drawOnCanvas(canvas);
                     break;
@@ -285,8 +287,7 @@ public class ButtonHexagon extends AppCompatButton {
                     vertexY[2] = bottom;
                     vertexY[3] = bottom;
 
-                    drawOnUpperHalfHexagonCanvas(canvas);
-
+                    drawOnHalfHexagonCanvas(canvas);
                     break;
 
                 case 3: //  Lower half hexagon
@@ -302,6 +303,8 @@ public class ButtonHexagon extends AppCompatButton {
                     vertexY[1] = top;
                     vertexY[2] = bottom;
                     vertexY[3] = bottom;
+
+                    drawOnHalfHexagonCanvas(canvas);
                     break;
             }
 
@@ -323,8 +326,14 @@ public class ButtonHexagon extends AppCompatButton {
 
     }
 
-    private void drawOnUpperHalfHexagonCanvas(Canvas canvas) {
+    private void drawOnHalfHexagonCanvas(Canvas canvas) {
         try {
+            if (isSpecialKey) {
+                setTextColor(serviceKeyboard.getCurrentTheme().getSpecialKeyFontColor());
+            } else {
+                setTextColor(serviceKeyboard.getCurrentTheme().getDefaultKeyFontColor());
+            }
+
             if (iconResId != 0) {
                 colorIconBottomLine = serviceKeyboard.getCurrentTheme().getIconColor();
                 setTextColor(colorIconBottomLine);
@@ -855,6 +864,43 @@ public class ButtonHexagon extends AppCompatButton {
 
     public char getKeyCode() {
         return keyCode;
+    }
+
+    public boolean isCustomizableButton() {
+        return customizableIndex != -1;
+    }
+
+    public int getCustomizableIndex() {
+        return customizableIndex;
+    }
+
+    /**
+     * Gets the action to display on the button face, to determine which char/icon should be used.
+     * If short is configured, then display short action.
+     * If short is not configured, then display the long action.
+     * @return
+     */
+    public ButtonAction customizableDisplayAction(Context context) {
+        if (this.getCustomizableIndex() == -1) {
+            // We should not be calling this for non-customizable buttons
+            return null;
+        }
+        // Check the short press action
+        ButtonAction action = ButtonAction.helperGetCustomizableButtonConfiguration(context, this.getCustomizableIndex() * 2);
+        // Check the long press action, if short press is disabled
+        if (action == ButtonAction.Disabled) {
+            action = ButtonAction.helperGetCustomizableButtonConfiguration(context, this.getCustomizableIndex() * 2 + 1);
+        }
+        // If neither are configured, then the long press will also be Disabled
+        return action;
+    }
+
+    public ButtonAction getCustomizableButtonAction(Context context) {
+        if (this.isCustomizableButton()) {
+            return ButtonAction.helperGetCustomizableButtonConfiguration(context, this.getCustomizableIndex());
+        } else {
+            return null;
+        }
     }
 
     public void setOnHexagonTouchListener(OnHexagonTouchListener hexagonTouchListener) {

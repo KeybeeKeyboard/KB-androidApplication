@@ -144,6 +144,21 @@
                 app:custom_font="@string/font_dosis_regular" />
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/linear_customButtons"
+            style="@style/LayoutOption">
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                style="@style/TextOption"
+                android:text="@string/customize"
+                app:custom_font="@string/font_dosis_regular" />
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                style="@style/TextOptionIntro"
+                android:text="@string/customizeDescription"
+                app:custom_font="@string/font_dosis_regular" />
+        </LinearLayout>
+
 
         <View
             android:layout_width="match_parent"

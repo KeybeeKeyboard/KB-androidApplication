@@ -148,6 +148,8 @@ public class PrefData {
     public static final String G0_SP = "G0_SP";
     public static final String G0_DE = "G0_DE";
 
+    public static final String CUSTOM_BUTTONS="CUSTOM_BUTTONS";
+
     public static final String a="a";
     public static final String c="c";
     public static final String d="d";

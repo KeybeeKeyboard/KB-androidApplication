@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="it.keybeeproject.keybee.activity.CustomButtonsActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/dp20">
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                android:id="@+id/main_txt"
+                style="@style/TextInstructHome"
+                android:layout_marginLeft="@dimen/dp60"
+                android:layout_marginBottom="@dimen/dp10"
+                android:gravity="start"
+                android:text="@string/smallButtons"
+                app:custom_font="@string/font_dosis_medium" />
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal" android:padding="@dimen/dp5">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center_vertical" android:orientation="vertical"> <it.keybeeproject.keybee.view.TextViewCustom android:id="@+id/Text_Top1Short" style="@style/TextAplhabet" android:text="@string/Top1Short" app:custom_font="@string/font_dosis_regular" /> </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical"> <ImageView style="@style/ArrowImage" android:src="@drawable/ic_next" /> </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical"> <Spinner android:id="@+id/Spin_Top1Short" style="@style/spinner" /> </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal" android:padding="@dimen/dp5">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center_vertical" android:orientation="vertical"> <it.keybeeproject.keybee.view.TextViewCustom android:id="@+id/Text_Top1Long" style="@style/TextAplhabet" android:text="@string/Top1Long" app:custom_font="@string/font_dosis_regular" /> </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical"> <ImageView style="@style/ArrowImage" android:src="@drawable/ic_next" /> </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical"> <Spinner android:id="@+id/Spin_Top1Long" style="@style/spinner" /> </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal" android:padding="@dimen/dp5">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center_vertical" android:orientation="vertical"> <it.keybeeproject.keybee.view.TextViewCustom android:id="@+id/Text_Top2Short" style="@style/TextAplhabet" android:text="@string/Top2Short" app:custom_font="@string/font_dosis_regular" /> </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical"> <ImageView style="@style/ArrowImage" android:src="@drawable/ic_next" /> </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical"> <Spinner android:id="@+id/Spin_Top2Short" style="@style/spinner" /> </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal" android:padding="@dimen/dp5">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center_vertical" android:orientation="vertical"> <it.keybeeproject.keybee.view.TextViewCustom android:id="@+id/Text_Top2Long" style="@style/TextAplhabet" android:text="@string/Top2Long" app:custom_font="@string/font_dosis_regular" /> </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical"> <ImageView style="@style/ArrowImage" android:src="@drawable/ic_next" /> </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical"> <Spinner android:id="@+id/Spin_Top2Long" style="@style/spinner" /> </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal" android:padding="@dimen/dp5">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center_vertical" android:orientation="vertical"> <it.keybeeproject.keybee.view.TextViewCustom android:id="@+id/Text_Top3Short" style="@style/TextAplhabet" android:text="@string/Top3Short" app:custom_font="@string/font_dosis_regular" /> </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical"> <ImageView style="@style/ArrowImage" android:src="@drawable/ic_next" /> </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical"> <Spinner android:id="@+id/Spin_Top3Short" style="@style/spinner" /> </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal" android:padding="@dimen/dp5">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center_vertical" android:orientation="vertical"> <it.keybeeproject.keybee.view.TextViewCustom android:id="@+id/Text_Top3Long" style="@style/TextAplhabet" android:text="@string/Top3Long" app:custom_font="@string/font_dosis_regular" /> </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical"> <ImageView style="@style/ArrowImage" android:src="@drawable/ic_next" /> </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical"> <Spinner android:id="@+id/Spin_Top3Long" style="@style/spinner" /> </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal" android:padding="@dimen/dp5">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center_vertical" android:orientation="vertical"> <it.keybeeproject.keybee.view.TextViewCustom android:id="@+id/Text_Top4Short" style="@style/TextAplhabet" android:text="@string/Top4Short" app:custom_font="@string/font_dosis_regular" /> </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical"> <ImageView style="@style/ArrowImage" android:src="@drawable/ic_next" /> </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical"> <Spinner android:id="@+id/Spin_Top4Short" style="@style/spinner" /> </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal" android:padding="@dimen/dp5">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center_vertical" android:orientation="vertical"> <it.keybeeproject.keybee.view.TextViewCustom android:id="@+id/Text_Top4Long" style="@style/TextAplhabet" android:text="@string/Top4Long" app:custom_font="@string/font_dosis_regular" /> </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical"> <ImageView style="@style/ArrowImage" android:src="@drawable/ic_next" /> </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical"> <Spinner android:id="@+id/Spin_Top4Long" style="@style/spinner" /> </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal" android:padding="@dimen/dp5">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center_vertical" android:orientation="vertical"> <it.keybeeproject.keybee.view.TextViewCustom android:id="@+id/Text_Bottom1Short" style="@style/TextAplhabet" android:text="@string/Bottom1Short" app:custom_font="@string/font_dosis_regular" /> </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical"> <ImageView style="@style/ArrowImage" android:src="@drawable/ic_next" /> </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical"> <Spinner android:id="@+id/Spin_Bottom1Short" style="@style/spinner" /> </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal" android:padding="@dimen/dp5">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center_vertical" android:orientation="vertical"> <it.keybeeproject.keybee.view.TextViewCustom android:id="@+id/Text_Bottom1Long" style="@style/TextAplhabet" android:text="@string/Bottom1Long" app:custom_font="@string/font_dosis_regular" /> </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical"> <ImageView style="@style/ArrowImage" android:src="@drawable/ic_next" /> </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical"> <Spinner android:id="@+id/Spin_Bottom1Long" style="@style/spinner" /> </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal" android:padding="@dimen/dp5">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center_vertical" android:orientation="vertical"> <it.keybeeproject.keybee.view.TextViewCustom android:id="@+id/Text_Bottom2Short" style="@style/TextAplhabet" android:text="@string/Bottom2Short" app:custom_font="@string/font_dosis_regular" /> </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical"> <ImageView style="@style/ArrowImage" android:src="@drawable/ic_next" /> </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical"> <Spinner android:id="@+id/Spin_Bottom2Short" style="@style/spinner" /> </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal" android:padding="@dimen/dp5">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center_vertical" android:orientation="vertical"> <it.keybeeproject.keybee.view.TextViewCustom android:id="@+id/Text_Bottom2Long" style="@style/TextAplhabet" android:text="@string/Bottom2Long" app:custom_font="@string/font_dosis_regular" /> </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical"> <ImageView style="@style/ArrowImage" android:src="@drawable/ic_next" /> </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical"> <Spinner android:id="@+id/Spin_Bottom2Long" style="@style/spinner" /> </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal" android:padding="@dimen/dp5">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center_vertical" android:orientation="vertical"> <it.keybeeproject.keybee.view.TextViewCustom android:id="@+id/Text_Bottom3Short" style="@style/TextAplhabet" android:text="@string/Bottom3Short" app:custom_font="@string/font_dosis_regular" /> </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical"> <ImageView style="@style/ArrowImage" android:src="@drawable/ic_next" /> </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical"> <Spinner android:id="@+id/Spin_Bottom3Short" style="@style/spinner" /> </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal" android:padding="@dimen/dp5">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center_vertical" android:orientation="vertical"> <it.keybeeproject.keybee.view.TextViewCustom android:id="@+id/Text_Bottom3Long" style="@style/TextAplhabet" android:text="@string/Bottom3Long" app:custom_font="@string/font_dosis_regular" /> </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical"> <ImageView style="@style/ArrowImage" android:src="@drawable/ic_next" /> </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical"> <Spinner android:id="@+id/Spin_Bottom3Long" style="@style/spinner" /> </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal" android:padding="@dimen/dp5">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center_vertical" android:orientation="vertical"> <it.keybeeproject.keybee.view.TextViewCustom android:id="@+id/Text_Bottom4Short" style="@style/TextAplhabet" android:text="@string/Bottom4Short" app:custom_font="@string/font_dosis_regular" /> </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical"> <ImageView style="@style/ArrowImage" android:src="@drawable/ic_next" /> </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical"> <Spinner android:id="@+id/Spin_Bottom4Short" style="@style/spinner" /> </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal" android:padding="@dimen/dp5">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center_vertical" android:orientation="vertical"> <it.keybeeproject.keybee.view.TextViewCustom android:id="@+id/Text_Bottom4Long" style="@style/TextAplhabet" android:text="@string/Bottom4Long" app:custom_font="@string/font_dosis_regular" /> </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical"> <ImageView style="@style/ArrowImage" android:src="@drawable/ic_next" /> </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical"> <Spinner android:id="@+id/Spin_Bottom4Long" style="@style/spinner" /> </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <it.keybeeproject.keybee.view.ButtonCustom
+                    android:id="@+id/reset"
+                    style="?android:borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp40"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/reset"
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/sp14" />
+
+
+                <it.keybeeproject.keybee.view.ButtonCustom
+                    android:id="@+id/done"
+                    style="?android:borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp40"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/done"
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/sp14" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

@@ -23,6 +23,7 @@
     <string name="discover_new_way">Discover the new way of typing</string>
     <string name="main_settings">Main settings</string>
     <string name="layout">Layout and pop-up</string>
+    <string name="customize">Customize buttons</string>
     <string name="layout_dialog">Layout</string>
     <string name="theme">Theme</string>
     <string name="twipe">Twipe</string>
@@ -75,6 +76,7 @@
     <string name="center">Center</string>
     <string name="left">Left</string>
     <string name="dark">Dark</string>
+    <string name="customizeDescription">Customize small keybaord buttons</string>
     <string name="light">Light</string>
     <string name="msg_instruct_language">Thank you for downloading\nKeybee Keyboard.\n\nPlease select your layout:</string>
     <string name="popup">Pop-up</string>
@@ -82,6 +84,7 @@
     <string name="spanish">Español</string>
     <string name="italian">Italiano</string>
     <string name="german">Deutsch</string>
+    <string name="smallButtons">Small Buttons</string>
     <string name="msg_enable_keybee">Enable Keybee Keyboard and\nset as default keyboard</string>
     <string name="button1_enable_keybee">1. Enable Keybee Keyboard</string>
     <string name="button2_choose_keybee">2. Choose Keybee Keyboard</string>
@@ -153,11 +156,13 @@
     <string name="info">Info</string>
     <string name="keybee_theme_market">Keybee Keyboard themes</string>
     <string name="custom_layout">Keybee Keyboard custom layout</string>
+    <string name="custom_buttons">Small Button Customizer</string>
     <string name="theme_info">Tap on the theme to see and use your favourite one.</string>
     <string name="theme_info_OLD">Tap on the theme to see, use or buy your favourite one. A theme costs only 1€ like a coffee in Italy.\n\nIf you have purchased a theme from a different device, please reinstall Keybee Keyboard to sync and use your purchased themes.</string>
     <string name="layout_info">To customize the layout fill the column on the right with the desired letter. \n\nTo customize the pop-up press the underlined letter on the left column and then reorder the special letters with the up and down arrows as you like.</string>
     <string name="layout_info_OLD">To customize the layout fill the column on the right with the desired letter. \n\nCustom layout is available only with Keybee subscription. \n\nTo customize the pop-up press the underlined letter on the left column and then reorder the special letters with the up and down arrows as you like. \n\nCustom pop-up is available fore free without Keybee subscription.</string>
     <string name="use">USE</string>
+    <string name="done">DONE</string>
     <string name="purchased">PURCHASED</string>
     <string name="free">FREE</string>
     <string name="buy">BUY</string>
@@ -245,6 +250,23 @@
     <string name="X">X</string>
     <string name="Y">Y</string>
     <string name="Z">Z</string>
+
+    <string name="Top1Short">Top #1 Short</string>
+    <string name="Top1Long">Top #1 Long</string>
+    <string name="Top2Short">Top #2 Short</string>
+    <string name="Top2Long">Top #2 Long</string>
+    <string name="Top3Short">Top #3 Short</string>
+    <string name="Top3Long">Top #3 Long</string>
+    <string name="Top4Short">Top #4 Short</string>
+    <string name="Top4Long">Top #4 Long</string>
+    <string name="Bottom1Short">Bottom #1 Short</string>
+    <string name="Bottom1Long">Bottom #1 Long</string>
+    <string name="Bottom2Short">Bottom #2 Short</string>
+    <string name="Bottom2Long">Bottom #2 Long</string>
+    <string name="Bottom3Short">Bottom #3 Short</string>
+    <string name="Bottom3Long">Bottom #3 Long</string>
+    <string name="Bottom4Short">Bottom #4 Short</string>
+    <string name="Bottom4Long">Bottom #4 Long</string>
 
     <string-array name="alphabet">
         <item>@string/A</item>

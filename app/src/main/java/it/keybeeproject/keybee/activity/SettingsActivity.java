@@ -36,7 +36,7 @@ public class SettingsActivity extends AppCompatActivity {
     private TextView textSize, textSizeIntro, textAlignment, textAlignmentIntro, textLateralGap, textThemeIntro,
             textLayoutIntro, textSelectedCurrency, text_theme_subsription/*, textAutoCorrection, textAutoCompletion, textLanguageDictionary*/;
     private LinearLayout linearEnable, linearTutorial, linearProjectInfo, linearSize, linearAlignment, linearTheme,
-            linearLayout, linearKeybee, linearGithub, linearKeybeecontest, linearFacebook, linearTwitter, linearLinkedIn, linearDonate, linearCurrency;
+            linearLayout, linearKeybee, linearGithub, linearKeybeecontest, linearFacebook, linearTwitter, linearLinkedIn, linearDonate, linearCurrency, linearCustomButtons;
     private RelativeLayout relative_topgap,relativeFullWidth, relativeLateralGap, relativeSound, relativeVibra, relativeDotSpace, linear_free_theme,
             relativePreview, relativeTwipe, relativeCursor, relativeDotApostophe, relativeTextCorrection, relativeTextAutoCapitalization, relative_notification;
     private ImageView img_apply_theme;
@@ -95,6 +95,7 @@ public class SettingsActivity extends AppCompatActivity {
         linearCurrency = findViewById(R.id.linear_currency);
 //      linear_theme = findViewById(R.id.linear_theme);
         linear_free_theme = findViewById(R.id.linear_free_theme);
+        linearCustomButtons = findViewById(R.id.linear_customButtons);
 
         relativeFullWidth = findViewById(R.id.relative_fullWidth);
         relative_topgap = findViewById(R.id.relative_topgap);
@@ -195,6 +196,15 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
 
+        linearCustomButtons.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showCustomButtonsDialog();
+            }
+        });
+
+        //        Intent intent =new Intent(SettingsActivity.this, CustomLayoutActivity.class);
+//        startActivity(intent);
 
         linearCurrency.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -399,13 +409,13 @@ public class SettingsActivity extends AppCompatActivity {
                 .setNegativeButton(R.string.CUSTOMIZE, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                      Intent intent =new Intent(SettingsActivity.this, CustomLayoutActivity.class);
-                      startActivity(intent);
+                        Intent intent =new Intent(SettingsActivity.this, CustomLayoutActivity.class);
+                        startActivity(intent);
                     }
                 });
 
 
-        final AlertDialog dialog = builder.create();
+            final AlertDialog dialog = builder.create();
         dialog.show();
 
 
@@ -417,6 +427,11 @@ public class SettingsActivity extends AppCompatActivity {
         btnPositive.setLayoutParams(layoutParams);
         btnNegative.setLayoutParams(layoutParams);
 
+    }
+
+    private void showCustomButtonsDialog() {
+        Intent intent = new Intent(SettingsActivity.this, CustomButtonsActivity.class);
+        startActivity(intent);
     }
 
     private void initMainSettings() {

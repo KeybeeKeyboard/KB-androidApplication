@@ -42,7 +42,7 @@ import it.keybeeproject.keybee.R;
 import it.keybeeproject.keybee.activity.SettingsActivity;
 import it.keybeeproject.keybee.adapter.EmojiAdapter;
 import it.keybeeproject.keybee.adapter.EmojiPagerAdapter;
-import it.keybeeproject.keybee.model.EmojiFlag;
+import it.keybeeproject.keybee.model.ButtonAction;
 import it.keybeeproject.keybee.model.Theme;
 import it.keybeeproject.keybee.utility.DrawableHelper;
 import it.keybeeproject.keybee.utility.PrefData;
@@ -270,17 +270,12 @@ public class KeyboardService extends InputMethodService implements
 
             @Override
             public void onClick(ButtonHexagon buttonHexagon) {
-                if (buttonHexagon.getKeyCode() != KeyEvent.KEYCODE_UNKNOWN) {
-                    handleOnClick(buttonHexagon);
-                }
+                handleOnClick(buttonHexagon);
             }
 
             @Override
             public boolean onLongClick(ButtonHexagon buttonHexagon) {
-                if (buttonHexagon.getKeyCode() != KeyEvent.KEYCODE_UNKNOWN) {
-                    callTapEffect();
-                    handleOnLongClick(buttonHexagon);
-                }
+                handleOnLongClick(buttonHexagon);
                 return true;
             }
 
@@ -549,9 +544,61 @@ public class KeyboardService extends InputMethodService implements
         }
     }
 
+    private char handleCustomAction(ButtonAction action) {
+        if (action.isCharacter) {
+            onClickLetter(action.buttonLabel.charAt(0));
+        } else {
+            switch (action) {
+                case Disabled:
+                    // This button is configured to do nothing
+                    break;
+                case Settings:
+                    Intent intentSettings = new Intent(this, SettingsActivity.class);
+                    intentSettings.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intentSettings);
+                    break;
+                case Emoji:
+                    setEmojiViewVisible(true);
+                    break;
+                case Enter:
+                    commitOnSeparator();
+                    keyDownUp(KeyEvent.KEYCODE_ENTER);
+                    break;
+                case Layout:
+                    if (!isFullWidth) {
+                        if (currentAlignment == PrefData.VAL_ALIGN_LEFT) {
+                            currentAlignment = PrefData.VAL_ALIGN_RIGHT;
+                        } else {
+                            currentAlignment++;
+                        }
+                    }
+                    PrefData.setIntPrefs(this, PrefData.KEY_ALIGN_I, currentAlignment);
+                    setKeyboardAlignment();
+                    break;
+                default:
+                    Log.e(TAG, "Unhandled custom non-character button action " + action);
+            }
+        }
+        // Do nothing by default
+        return KeyEvent.KEYCODE_UNKNOWN;
+    }
+
     private void handleOnClick(ButtonHexagon buttonHexagon) {
+        char keyCode = buttonHexagon.getKeyCode();
+
+        // First, check if this is a customizable button
+        if (buttonHexagon.isCustomizableButton()) {
+            // This is a short press, so see what it's configured to do
+            ButtonAction action = ButtonAction.helperGetCustomizableButtonConfiguration(this, buttonHexagon.getCustomizableIndex() * 2);
+            // Update the keycode to whatever the custom action is
+            keyCode = handleCustomAction(action);
+        }
+        if (keyCode == KeyEvent.KEYCODE_UNKNOWN) {
+            return;
+        }
+
         try {
-            switch (buttonHexagon.getKeyCode()) {
+            switch (keyCode) {
                 case KEYCODE_SHIFT:
                     isShiftOn = !isShiftOn;
                     isCapsLockOn = false;
@@ -606,7 +653,7 @@ public class KeyboardService extends InputMethodService implements
                 case KEYCODE_ALIGNMENT:
                     break;
                 default:
-                    onClickLetter(buttonHexagon.getKeyCode());
+                    onClickLetter(keyCode);
             }
             PrefData.setIntPrefs(getApplicationContext(), PrefData.KEY_TYPE, currentLayout);
         } catch (Exception e) {
@@ -651,26 +698,24 @@ public class KeyboardService extends InputMethodService implements
     }
 
     private void handleOnLongClick(ButtonHexagon buttonHexagon) {
+        char keyCode = buttonHexagon.getKeyCode();
+
+        // First, check if this is a customizable button
+        if (buttonHexagon.isCustomizableButton()) {
+            // This is a short press, so see what it's configured to do
+            ButtonAction action = ButtonAction.helperGetCustomizableButtonConfiguration(this, buttonHexagon.getCustomizableIndex() * 2 + 1);
+            // Update the keycode to whatever the custom action is
+            keyCode = handleCustomAction(action);
+        }
+
+        if (keyCode != KeyEvent.KEYCODE_UNKNOWN) {
+            callTapEffect();
+        }
+
         try {
-            switch (buttonHexagon.getKeyCode()) {
+            switch (keyCode) {
                 case KEYCODE_SHIFT:
                     toggleCapsLock();
-                    break;
-                case KEYCODE_SETTINGS:
-                    Intent intentSettings = new Intent(this, SettingsActivity.class);
-                    intentSettings.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    startActivity(intentSettings);
-                    break;
-                case KEYCODE_ALIGNMENT:
-                    if (!isFullWidth) {
-                        if (currentAlignment == PrefData.VAL_ALIGN_LEFT) {
-                            currentAlignment = PrefData.VAL_ALIGN_RIGHT;
-                        } else {
-                            currentAlignment++;
-                        }
-                    }
-                    PrefData.setIntPrefs(this, PrefData.KEY_ALIGN_I, currentAlignment);
-                    setKeyboardAlignment();
                     break;
                 case KEYCODE_SPACE:
                     if (isCursorEnabled) {
@@ -759,7 +804,7 @@ public class KeyboardService extends InputMethodService implements
 
     private void updateOnShift() {
         for (int buttonPosition = 0; buttonPosition < arrButtons.length; buttonPosition++) {
-            if (arrButtons[buttonPosition].getShape() == 1) {
+            if (arrButtons[buttonPosition].getShape() == 1 || arrButtons[buttonPosition].customizableDisplayAction(this).isCharacter) {
                 arrButtons[buttonPosition].setAllCaps(isShiftOn);
             }
         }
@@ -879,7 +924,12 @@ public class KeyboardService extends InputMethodService implements
                         arrButtons[i].setTextSize(TypedValue.COMPLEX_UNIT_PX, buttonHeightHalf * .35f);
                         break;
                     default:
-                        arrButtons[i].setTextSize(TypedValue.COMPLEX_UNIT_PX, buttonHeight * .6f);
+                        if (arrButtons[i].isCustomizableButton()) {
+                            // Customizable buttons are half the size
+                            arrButtons[i].setTextSize(TypedValue.COMPLEX_UNIT_PX, buttonHeightHalf * .8f);
+                        } else {
+                            arrButtons[i].setTextSize(TypedValue.COMPLEX_UNIT_PX, buttonHeight * .6f);
+                        }
                 }
                 setButtonText(i);
             }
@@ -893,6 +943,9 @@ public class KeyboardService extends InputMethodService implements
     }
 
     private void setButtonText(int buttonPosition) {
+        if (buttonPosition == 0 || arrButtons[buttonPosition].isCustomizableButton()) {
+            return;
+        }
 
         arrButtons[buttonPosition].setKeyCode(arrKeyCode[buttonPosition][currentLayout][currentLanguage]);
 
@@ -1188,23 +1241,21 @@ public class KeyboardService extends InputMethodService implements
                 viewKeyboard.setGravity(Gravity.RIGHT);
                 relativeKeyboardContainer.setGravity(Gravity.RIGHT|Gravity.BOTTOM);
                 relativeEmoji.setGravity(Gravity.RIGHT);
-                button39.setIcon(R.drawable.ic_align_right);
                 break;
             case PrefData.VAL_ALIGN_CENTER:
                 viewKeyboard.setGravity(Gravity.CENTER_HORIZONTAL);
                 relativeKeyboardContainer.setGravity(Gravity.CENTER_HORIZONTAL|Gravity.BOTTOM);
                 relativeEmoji.setGravity(Gravity.CENTER_HORIZONTAL);
-                button39.setIcon(isFullWidth ? R.drawable.ic_align_full : R.drawable.ic_align_center);
                 break;
             case PrefData.VAL_ALIGN_LEFT:
                 viewKeyboard.setGravity(Gravity.LEFT);
                 relativeKeyboardContainer.setGravity(Gravity.LEFT|Gravity.BOTTOM);
                 relativeEmoji.setGravity(Gravity.LEFT);
-                button39.setIcon(R.drawable.ic_align_left);
                 break;
             default:
                 break;
         }
+        setCustomButtonIcons(null);
     }
 
     private void setKeyboardHeight() {
@@ -1286,6 +1337,59 @@ public class KeyboardService extends InputMethodService implements
         }
     }
 
+    private void setCustomButtonIcons(Boolean isSearch) {
+        int alignmentIconId = R.drawable.ic_align_full;
+        currentAlignment = isFullWidth ? PrefData.VAL_ALIGN_CENTER
+                : PrefData.getIntPrefs(this, PrefData.KEY_ALIGN_I, PrefData.VAL_ALIGN_CENTER);
+        switch (currentAlignment) {
+            case PrefData.VAL_ALIGN_RIGHT:
+                alignmentIconId = R.drawable.ic_align_right;
+                break;
+            case PrefData.VAL_ALIGN_CENTER:
+                alignmentIconId = isFullWidth ? R.drawable.ic_align_full : R.drawable.ic_align_center;
+                break;
+            case PrefData.VAL_ALIGN_LEFT:
+                alignmentIconId = R.drawable.ic_align_left;
+                break;
+            default:
+                break;
+        }
+
+        ButtonHexagon[] customButtons = {button1, button3, button5, button7, button36, button37, button38, button39};
+        // Try to figure out what icon each button should have
+        for (ButtonHexagon customButton : customButtons) {
+            // Check the short press action
+            ButtonAction displayAction = customButton.customizableDisplayAction(this);
+            switch (displayAction) {
+                case Disabled:
+                    // This button has no single or double press. There is no icon, we can keep going
+                    customButton.setText("");
+                    customButton.setIcon(0);
+                    break;
+                case Settings:
+                    customButton.setText("");
+                    customButton.setIcon(R.drawable.ic_settings);
+                    break;
+                case Emoji:
+                    customButton.setText("");
+                    customButton.setIcon(R.drawable.ic_emoticon);
+                    break;
+                case Enter:
+                    customButton.setText("");
+                    customButton.setIcon((isSearch != null && isSearch) ? R.drawable.ic_search : R.drawable.ic_enter);
+                    break;
+                case Layout:
+                    customButton.setText("");
+                    customButton.setIcon(alignmentIconId);
+                    break;
+                default:
+                    String buttonLabel = displayAction.buttonLabel;
+                    customButton.setText(buttonLabel);
+                    customButton.setIcon(0);
+            }
+        }
+    }
+
     @Override
     public void onStartInputView(EditorInfo editorInfo, boolean restarting) {
         setKeyboardHeight();
@@ -1300,16 +1404,13 @@ public class KeyboardService extends InputMethodService implements
         isCapsLockOn = false;
 
         boolean isSearch = false;
-        if (button38 != null) {
-            switch (editorInfo.imeOptions & (EditorInfo.IME_MASK_ACTION | EditorInfo.IME_FLAG_NO_ENTER_ACTION)) {
-                case EditorInfo.IME_ACTION_SEARCH:
-                    button38.setIcon(R.drawable.ic_search);
-                    isSearch = true;
-                    break;
-                default:
-                    button38.setIcon(R.drawable.ic_enter);
-            }
+        switch (editorInfo.imeOptions & (EditorInfo.IME_MASK_ACTION | EditorInfo.IME_FLAG_NO_ENTER_ACTION)) {
+            case EditorInfo.IME_ACTION_SEARCH:
+                isSearch = true;
+                break;
+            default:
         }
+        setCustomButtonIcons(isSearch);
 
         ExtractedTextRequest request = new ExtractedTextRequest();
         request.hintMaxChars = 1;

@@ -32,6 +32,10 @@
             android:label="@string/custom_layout">
         </activity>
         <activity
+            android:name=".activity.CustomButtonsActivity"
+            android:label="@string/custom_buttons">
+        </activity>
+        <activity
             android:name=".activity.TutorialActivity"
             android:theme="@style/AppThemeNoActionbar">
         </activity>
