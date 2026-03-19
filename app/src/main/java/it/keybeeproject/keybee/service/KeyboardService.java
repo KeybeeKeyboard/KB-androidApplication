@@ -1343,12 +1343,13 @@ public class KeyboardService extends InputMethodService implements
 
         if (editorInfo != null) {
             int i = editorInfo.inputType;
-            if ((i == (InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD)) ||
-                    (i == (InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_VARIATION_PASSWORD))) {
+            boolean isPassword = (i & InputType.TYPE_CLASS_TEXT) != 0 && (i & InputType.TYPE_TEXT_VARIATION_PASSWORD) != 0;
+            boolean isNumber = (i & InputType.TYPE_CLASS_NUMBER) != 0;
+            if (isPassword || isNumber) {
                 isCapsLockOn = false;// if edit text excepts only text with number then show keyboard with small text.
                 isShiftOn = false;
                 updateOnShift();
-                if ((i == (InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_VARIATION_PASSWORD))) {
+                if (isNumber) {
                     isShiftOn = true;
                     updateOnNum();// if edit text excepts only number password then show keyboard with number pad.
                 }
