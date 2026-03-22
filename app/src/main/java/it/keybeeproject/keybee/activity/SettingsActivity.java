@@ -437,6 +437,7 @@ public class SettingsActivity extends AppCompatActivity {
         checkTwipe.setChecked(PrefData.getBooleanPrefs(SettingsActivity.this, PrefData.KEY_IS_TWIPE_ENABLED_B, true));
         checkCursor.setChecked(PrefData.getBooleanPrefs(SettingsActivity.this, PrefData.KEY_IS_CURSOR_ENABLED_B, true));
         checkDotApostophe.setChecked(PrefData.getBooleanPrefs(SettingsActivity.this, PrefData.KEY_IS_DOT_ENABLED_B, false));
+        checkCentralAt.setChecked(PrefData.getBooleanPrefs(this, PrefData.KEY_IS_AT_CENTRAL, false));
         img_apply_theme.setImageResource(PrefData.getBooleanPrefs(this, Constant.SKU) ? R.drawable.ic_check : R.drawable.ic_add);
         //int status = PrefData.getIntPrefs(this, PrefData.KEY_NOTIFICATION, OneSignal.getNotifications().getPermission() ? 1 : -1);
         check_notification.setChecked(OneSignal.getNotifications().getPermission());
