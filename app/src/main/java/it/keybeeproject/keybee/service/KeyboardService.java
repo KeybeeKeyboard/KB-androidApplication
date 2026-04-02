@@ -1,5 +1,6 @@
 package it.keybeeproject.keybee.service;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -694,12 +695,20 @@ public class KeyboardService extends InputMethodService implements
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private void handleOnDoubleTap(ButtonHexagon buttonHexagon) {
         try {
-            switch (buttonHexagon.getKeyCode()) {
-                case KEYCODE_SHIFT:
-                    toggleCapsLock();
-                    break;
+            if (buttonHexagon.getKeyCode() == KEYCODE_SHIFT) {
+                toggleCapsLock();
+            }
+            // If a text field was incorrectly flagged as mail,
+            // the user can double tap the @ to revert it to space
+            else if (buttonHexagon == button18 && buttonHexagon.getKeyCode() == '@') {
+                button18.setKeyCode(KEYCODE_SPACE);
+                button18.setText("" + KEYCODE_SPACE);
+                // The first tap inserted an @ but the user wanted a space, so we correct that
+                updateOnBackSpace();
+                printText(KEYCODE_SPACE);
             }
         } catch (Exception e) {
             Log.e(TAG, "handleOnDoubleTap Exception : ", e);
