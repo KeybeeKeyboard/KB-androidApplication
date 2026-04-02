@@ -38,13 +38,13 @@ public class SettingsActivity extends AppCompatActivity {
     private LinearLayout linearEnable, linearTutorial, linearProjectInfo, linearSize, linearAlignment, linearTheme,
             linearLayout, linearKeybee, linearGithub, linearKeybeecontest, linearFacebook, linearTwitter, linearLinkedIn, linearDonate, linearCurrency;
     private RelativeLayout relative_topgap,relativeFullWidth, relativeLateralGap, relativeSound, relativeVibra, relativeDotSpace, linear_free_theme,
-            relativePreview, relativeTwipe, relativeCursor, relativeDotApostophe, relativeTextCorrection, relativeTextAutoCapitalization, relative_notification;
+            relativePreview, relativeTwipe, relativeCursor, relativeDotApostophe, relativeTextCorrection, relativeTextAutoCapitalization, relative_notification, relativeCentralAt;
     private ImageView img_apply_theme;
     private String[] arrSizeTitle, arrAlignmentTitle, arrLayoutTitle, arrCurrencyTitle, arrLanguageCode;
     private float[] arrSizeValue;
     private int currentKeyboardLayout;
     private CheckBox check_topgap,checkFullWidth, checkLateralGapFill, checkSound, checkVibra, checkDotSpace, checkPreview, checkTwipe,
-            checkCursor, checkDotApostophe, checkTextSuggestion, checkTextAutoCapitalization, check_notification;
+            checkCursor, checkDotApostophe, checkTextSuggestion, checkTextAutoCapitalization, check_notification, checkCentralAt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,6 +109,7 @@ public class SettingsActivity extends AppCompatActivity {
         relativeTextCorrection = findViewById(R.id.relative_textCorrection);
         relativeTextAutoCapitalization = findViewById(R.id.relative_textAutoCapitalization);
         relative_notification = findViewById(R.id.relative_notification);
+        relativeCentralAt = findViewById(R.id.central_at_layout);
 
         check_notification = findViewById(R.id.check_notification);
         checkFullWidth = findViewById(R.id.check_fullWidth);
@@ -123,6 +124,7 @@ public class SettingsActivity extends AppCompatActivity {
         checkDotApostophe = findViewById(R.id.check_dot_apostophe);
         checkTextSuggestion = findViewById(R.id.check_textCorrection);
         checkTextAutoCapitalization = findViewById(R.id.check_textAutoCapitalization);
+        checkCentralAt = findViewById(R.id.check_central_at);
 
         img_apply_theme = findViewById(R.id.img_apply_theme);
 
@@ -160,6 +162,11 @@ public class SettingsActivity extends AppCompatActivity {
                 PrefData.setBooleanPrefs(SettingsActivity.this, PrefData.KEY_IS_TOP_GAP_FILL, check_topgap.isChecked());
                 //enableOtherSizeSettings(!check_topgap.isChecked());
             }
+        });
+
+        relativeCentralAt.setOnClickListener(v -> {
+            checkCentralAt.setChecked(!checkCentralAt.isChecked());
+            PrefData.setBooleanPrefs(SettingsActivity.this, PrefData.KEY_IS_AT_CENTRAL, checkCentralAt.isChecked());
         });
 
 
@@ -430,6 +437,7 @@ public class SettingsActivity extends AppCompatActivity {
         checkTwipe.setChecked(PrefData.getBooleanPrefs(SettingsActivity.this, PrefData.KEY_IS_TWIPE_ENABLED_B, true));
         checkCursor.setChecked(PrefData.getBooleanPrefs(SettingsActivity.this, PrefData.KEY_IS_CURSOR_ENABLED_B, true));
         checkDotApostophe.setChecked(PrefData.getBooleanPrefs(SettingsActivity.this, PrefData.KEY_IS_DOT_ENABLED_B, false));
+        checkCentralAt.setChecked(PrefData.getBooleanPrefs(this, PrefData.KEY_IS_AT_CENTRAL, false));
         img_apply_theme.setImageResource(PrefData.getBooleanPrefs(this, Constant.SKU) ? R.drawable.ic_check : R.drawable.ic_add);
         //int status = PrefData.getIntPrefs(this, PrefData.KEY_NOTIFICATION, OneSignal.getNotifications().getPermission() ? 1 : -1);
         check_notification.setChecked(OneSignal.getNotifications().getPermission());

@@ -42,6 +42,7 @@ public class PrefData {
     public static final String KEY_USAGE_EVENT_DATE_S = "usageEventDate";
     public static final String KEY_IS_TEXT_SUGGESTION_ENABLED_B = "isTextSuggestionEnabled";
     public static final String KEY_IS_TEXT_AUTOCAPITALIZATION_ENABLED_B = "isTextAutocapitalizationEnabled";
+    public static final String KEY_IS_AT_CENTRAL = "centralAt";
     public static final String KEY_TYPE = "KeyboardLayout";
     public static final String AO_EN = "AO_EN";
     public static final String AO_IT = "AO_IT";

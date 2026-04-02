@@ -144,7 +144,29 @@
                 app:custom_font="@string/font_dosis_regular" />
         </LinearLayout>
 
+        <RelativeLayout
+            android:id="@+id/central_at_layout"
+            style="@style/LayoutOption">
 
+            <it.keybeeproject.keybee.view.TextViewCustom
+                android:id="@+id/text_central_at"
+                style="@style/TextOption"
+                android:layout_toStartOf="@+id/check_central_at"
+                android:text="@string/is_at_central"
+                app:custom_font="@string/font_dosis_regular" />
+
+            <CheckBox
+                android:id="@+id/check_central_at"
+                style="@style/CheckOption" />
+
+            <it.keybeeproject.keybee.view.TextViewCustom
+                style="@style/TextOptionIntro"
+                android:layout_below="@id/text_central_at"
+                android:layout_toLeftOf="@id/check_central_at"
+                android:text="@string/is_at_central_description"
+                app:custom_font="@string/font_dosis_regular" />
+        </RelativeLayout>
+        
         <View
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp1"

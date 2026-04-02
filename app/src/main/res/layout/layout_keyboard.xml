@@ -195,6 +195,7 @@
             app:custom_font="@string/key_font"
             app:hexagonShape="full"
             app:longClickEnabled="true"
+            app:doubleTapEnabled="true"
             app:previewEnabled="false" />
 
         <it.keybeeproject.keybee.view.ButtonHexagon

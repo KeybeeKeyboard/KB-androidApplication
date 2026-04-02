@@ -1,5 +1,6 @@
 package it.keybeeproject.keybee.service;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -50,6 +51,9 @@ import it.keybeeproject.keybee.utility.Utility;
 import it.keybeeproject.keybee.view.ButtonHexagon;
 import it.keybeeproject.keybee.view.TextViewCustom;
 
+import static android.text.InputType.TYPE_CLASS_TEXT;
+import static android.text.InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS;
+import static android.text.InputType.TYPE_TEXT_VARIATION_URI;
 import static android.view.inputmethod.InputConnection.CURSOR_UPDATE_MONITOR;
 import static androidx.annotation.Dimension.SP;
 
@@ -92,7 +96,7 @@ public class KeyboardService extends InputMethodService implements
     private final char KEYCODE_SYM = (char) -111,
             KEYCODE_NUM = (char) -112,
             KEYCODE_ABC = (char) -113,
-            KEYCODE_SPACE = (char) -114,
+            KEYCODE_SPACE = ' ',
             KEYCODE_SHIFT = (char) -115,
             KEYCODE_SETTINGS = (char) -116,
             KEYCODE_EMOTICON = (char) -117,
@@ -241,7 +245,8 @@ public class KeyboardService extends InputMethodService implements
 
             @Override
             public void onActionMove(ButtonHexagon buttonHexagon, MotionEvent event) {
-                if (buttonHexagon.getKeyCode() == KEYCODE_SPACE && isCursorEnabled && isCursorModeOn) {
+                Log.d(TAG, String.format("onActionMove: %b\t%b\t%b", buttonHexagon == button18, isCursorEnabled, isCursorModeOn));
+                if (buttonHexagon == button18 && isCursorEnabled && isCursorModeOn) {
                     if (lastX == 0) {
                         lastX = event.getX();
                         hMove = 0;
@@ -586,7 +591,7 @@ public class KeyboardService extends InputMethodService implements
                             updateOnShift();
                         }
                     } else if ((currentText == null || currentText.length() == 0) && !isShiftOn &&
-                            !isAutocapitalizationEnable) {
+                            shouldCapitalize(getCurrentInputEditorInfo())) {
                         isShiftOn = true;
                         updateOnShift();
                     }
@@ -672,14 +677,16 @@ public class KeyboardService extends InputMethodService implements
                     PrefData.setIntPrefs(this, PrefData.KEY_ALIGN_I, currentAlignment);
                     setKeyboardAlignment();
                     break;
-                case KEYCODE_SPACE:
-                    if (isCursorEnabled) {
-                        isCursorModeOn = true;
-                        lastX = 0;
-                        lastY = 0;
-                    } else {
-                        ((InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE)).
-                                showInputMethodPicker();
+                default:
+                    if (buttonHexagon == button18) {
+                        if (isCursorEnabled) {
+                            isCursorModeOn = true;
+                            lastX = 0;
+                            lastY = 0;
+                        } else {
+                            ((InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE)).
+                                    showInputMethodPicker();
+                        }
                     }
                     break;
             }
@@ -688,12 +695,20 @@ public class KeyboardService extends InputMethodService implements
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private void handleOnDoubleTap(ButtonHexagon buttonHexagon) {
         try {
-            switch (buttonHexagon.getKeyCode()) {
-                case KEYCODE_SHIFT:
-                    toggleCapsLock();
-                    break;
+            if (buttonHexagon.getKeyCode() == KEYCODE_SHIFT) {
+                toggleCapsLock();
+            }
+            // If a text field was incorrectly flagged as mail,
+            // the user can double tap the @ to revert it to space
+            else if (buttonHexagon == button18 && buttonHexagon.getKeyCode() == '@') {
+                button18.setKeyCode(KEYCODE_SPACE);
+                button18.setText("" + KEYCODE_SPACE);
+                // The first tap inserted an @ but the user wanted a space, so we correct that
+                updateOnBackSpace();
+                printText(KEYCODE_SPACE);
             }
         } catch (Exception e) {
             Log.e(TAG, "handleOnDoubleTap Exception : ", e);
@@ -897,8 +912,6 @@ public class KeyboardService extends InputMethodService implements
         arrButtons[buttonPosition].setKeyCode(arrKeyCode[buttonPosition][currentLayout][currentLanguage]);
 
         switch (arrKeyCode[buttonPosition][currentLayout][currentLanguage]) {
-            case KEYCODE_SPACE:
-                break;
             case KEYCODE_SYM:
                 arrButtons[buttonPosition].setText(R.string.sym);
                 arrButtons[buttonPosition].setIcon(0);
@@ -1299,16 +1312,8 @@ public class KeyboardService extends InputMethodService implements
 
         isCapsLockOn = false;
 
-        boolean isSearch = false;
         if (button38 != null) {
-            switch (editorInfo.imeOptions & (EditorInfo.IME_MASK_ACTION | EditorInfo.IME_FLAG_NO_ENTER_ACTION)) {
-                case EditorInfo.IME_ACTION_SEARCH:
-                    button38.setIcon(R.drawable.ic_search);
-                    isSearch = true;
-                    break;
-                default:
-                    button38.setIcon(R.drawable.ic_enter);
-            }
+            button38.setIcon(isSearch(editorInfo) ? R.drawable.ic_search : R.drawable.ic_enter);
         }
 
         ExtractedTextRequest request = new ExtractedTextRequest();
@@ -1321,7 +1326,7 @@ public class KeyboardService extends InputMethodService implements
         }
         if (getCurrentInputConnection() != null) {
             ExtractedText extractedText = getCurrentInputConnection().getExtractedText(request, 0);
-            isShiftOn = !isSearch && extractedText != null && extractedText.text.toString().length() == 0;
+            isShiftOn = !isSearch(editorInfo) && extractedText != null && extractedText.text.toString().length() == 0;
             if (isAutocapitalizationEnable) {
                 isCapsLockOn = false;// if edit text excepts text with number then show keyboard with small text.
                 isShiftOn = false;
@@ -1338,13 +1343,16 @@ public class KeyboardService extends InputMethodService implements
 
         setButtonValues();
         //for (int i = 0; i < arrButtons.length; i++) {
-        setButtonText(34);
+        setButtonText(17); // space
+        setButtonText(34); // ./'
        // }
 
         if (editorInfo != null) {
             int i = editorInfo.inputType;
             if ((i == (InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD)) ||
-                    (i == (InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_VARIATION_PASSWORD))) {
+                    (i == (InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_VARIATION_PASSWORD)) ||
+                    !shouldCapitalize(editorInfo))
+            {
                 isCapsLockOn = false;// if edit text excepts only text with number then show keyboard with small text.
                 isShiftOn = false;
                 updateOnShift();
@@ -1571,6 +1579,24 @@ public class KeyboardService extends InputMethodService implements
         }
     }
 
+    private static boolean isUri(EditorInfo info) {
+        int inputType = info.inputType;
+        return (inputType & 0xff) == (TYPE_CLASS_TEXT | TYPE_TEXT_VARIATION_URI);
+    }
+
+    private static boolean isEmailAddress(EditorInfo info) {
+        int inputType = info.inputType;
+        return (inputType & 0xff) == (TYPE_CLASS_TEXT | TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
+    }
+
+    private static boolean isSearch(EditorInfo info) {
+        return (info.imeOptions & (EditorInfo.IME_MASK_ACTION | EditorInfo.IME_FLAG_NO_ENTER_ACTION)) == EditorInfo.IME_ACTION_SEARCH;
+    }
+
+    private boolean shouldCapitalize(EditorInfo info) {
+        return !isAutocapitalizationEnable && !isUri(info) && !isEmailAddress(info) && !isSearch(info);
+    }
+
     private void setButtonValues() {
         char KEYCODE_DOT_APOSTROPHE = '.';
         char KEYCODE_DOT_APOSTROPHE1 = '\'';
@@ -1579,6 +1605,11 @@ public class KeyboardService extends InputMethodService implements
             KEYCODE_DOT_APOSTROPHE = '\'';
             KEYCODE_DOT_APOSTROPHE1 = '.';
         }
+        EditorInfo editorInfo = getCurrentInputEditorInfo();
+        char symbol = (isUri(editorInfo) || isEmailAddress(editorInfo)) ? '.' : KEYCODE_DOT_APOSTROPHE1;
+        boolean centralAtInMail = PrefData.getBooleanPrefs(this, PrefData.KEY_IS_AT_CENTRAL);
+        char central = isEmailAddress(editorInfo) && centralAtInMail ? '@' : KEYCODE_SPACE;
+
         try {
             /**
              *  arrKeyCode [ button ] [ layout ] [ language ];
@@ -1621,12 +1652,12 @@ public class KeyboardService extends InputMethodService implements
                     {{PrefData.getStringPrefs(this,PrefData.A1_EN,"z").charAt(0)}, {PrefData.getStringPrefs(this,PrefData.A1_IT,"v").charAt(0)}, {PrefData.getStringPrefs(this,PrefData.A1_SP,"b").charAt(0)}, {PrefData.getStringPrefs(this,PrefData.A1_DE,"y").charAt(0)}, {'4'}, {'{'}},      // 15, a1
                     {{PrefData.getStringPrefs(this,PrefData.B2_EN,"r").charAt(0)}, {PrefData.getStringPrefs(this,PrefData.B2_IT,"r").charAt(0)}, {PrefData.getStringPrefs(this,PrefData.B2_SP,"l").charAt(0)}, {PrefData.getStringPrefs(this,PrefData.B2_DE,"r").charAt(0)}, {'8'}, {'°'}},      // 16, b2
                     {{PrefData.getStringPrefs(this,PrefData.C1_EN,"o").charAt(0)}, {PrefData.getStringPrefs(this,PrefData.C1_IT,"e").charAt(0)}, {PrefData.getStringPrefs(this,PrefData.C1_SP,"o").charAt(0)}, {PrefData.getStringPrefs(this,PrefData.C1_DE,"n").charAt(0)}, {'6'}, {'}'}},      // 17, c1
-                    {{KEYCODE_SPACE},                                // 18, d2
-                            {KEYCODE_SPACE},
-                            {KEYCODE_SPACE},
-                            {KEYCODE_SPACE},
-                            {KEYCODE_SPACE},
-                            {KEYCODE_SPACE}},
+                    {{central},                                // 18, d2
+                            {central},
+                            {central},
+                            {central},
+                            {central},
+                            {central}},
                     {{PrefData.getStringPrefs(this,PrefData.E1_EN,"t").charAt(0)}, {PrefData.getStringPrefs(this,PrefData.E1_IT,"l").charAt(0)}, {PrefData.getStringPrefs(this,PrefData.E1_SP,"y").charAt(0)}, {PrefData.getStringPrefs(this,PrefData.E1_DE,"s").charAt(0)}, {'('}, {'['}},      // 19, e1
                     {{PrefData.getStringPrefs(this,PrefData.F2_EN,"y").charAt(0)}, {PrefData.getStringPrefs(this,PrefData.F2_IT,"g").charAt(0)}, {PrefData.getStringPrefs(this,PrefData.F2_SP,"d").charAt(0)}, {PrefData.getStringPrefs(this,PrefData.F2_DE,"t").charAt(0)}, {':'}, {'\\'}},     // 20, f2
                     {{PrefData.getStringPrefs(this,PrefData.G1_EN,"g").charAt(0)}, {PrefData.getStringPrefs(this,PrefData.G1_IT,"y").charAt(0)}, {PrefData.getStringPrefs(this,PrefData.G1_SP,"j").charAt(0)}, {PrefData.getStringPrefs(this,PrefData.G1_DE,"f").charAt(0)}, {')'}, {']'}},      // 21, g1
@@ -1659,7 +1690,7 @@ public class KeyboardService extends InputMethodService implements
                             {KeyEvent.KEYCODE_DEL},
                             {KeyEvent.KEYCODE_DEL},
                             {KeyEvent.KEYCODE_DEL}},
-                    {{KEYCODE_DOT_APOSTROPHE1}, {KEYCODE_DOT_APOSTROPHE1}, {KEYCODE_DOT_APOSTROPHE1}, {KEYCODE_DOT_APOSTROPHE1}, {','}, {'…'}},// 35, g3
+                    {{symbol}, {symbol}, {symbol}, {symbol}, {','}, {'…'}},// 35, g3
                     {{KEYCODE_SETTINGS},                             // 36, 36
                             {KEYCODE_SETTINGS},
                             {KEYCODE_SETTINGS},
