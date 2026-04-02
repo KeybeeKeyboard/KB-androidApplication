@@ -132,7 +132,7 @@
     <string name="notification_sync_message">Amazing! Keybee Keyboard notifications are now synced with your device notification</string>
     <string name="cursor_editing">Cursor editing</string>
     <string name="dot_apostrophe">Dot position</string>
-    <string name="cursor_intro">Hold the space key to move the cursor</string>
+    <string name="cursor_intro">Hold the central key to move the cursor</string>
     <string name="dot_or_apostorphe_intro">Dot key on main keyboard</string>
     <string name="keybee_spellchecker">Keybee Keyboard SpellChecker</string>
     <string name="text_suggestion">Text suggestion</string>

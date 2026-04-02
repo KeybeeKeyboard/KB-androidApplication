@@ -244,7 +244,8 @@ public class KeyboardService extends InputMethodService implements
 
             @Override
             public void onActionMove(ButtonHexagon buttonHexagon, MotionEvent event) {
-                if (buttonHexagon.getKeyCode() == KEYCODE_SPACE && isCursorEnabled && isCursorModeOn) {
+                Log.d(TAG, String.format("onActionMove: %b\t%b\t%b", buttonHexagon == button18, isCursorEnabled, isCursorModeOn));
+                if (buttonHexagon == button18 && isCursorEnabled && isCursorModeOn) {
                     if (lastX == 0) {
                         lastX = event.getX();
                         hMove = 0;
@@ -675,14 +676,16 @@ public class KeyboardService extends InputMethodService implements
                     PrefData.setIntPrefs(this, PrefData.KEY_ALIGN_I, currentAlignment);
                     setKeyboardAlignment();
                     break;
-                case KEYCODE_SPACE:
-                    if (isCursorEnabled) {
-                        isCursorModeOn = true;
-                        lastX = 0;
-                        lastY = 0;
-                    } else {
-                        ((InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE)).
-                                showInputMethodPicker();
+                default:
+                    if (buttonHexagon == button18) {
+                        if (isCursorEnabled) {
+                            isCursorModeOn = true;
+                            lastX = 0;
+                            lastY = 0;
+                        } else {
+                            ((InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE)).
+                                    showInputMethodPicker();
+                        }
                     }
                     break;
             }
